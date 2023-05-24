@@ -16,10 +16,12 @@ dv.set_txt_report_file_name(file_name)
 
 # Importing the cleaned data for visualizing
 # data_array = dcp.import_csv_to_numpy_array(data_path.get_path_to_cleaned_csv_file())
-dataframe = dcp.import_csv_to_dataframe(data_path.get_path_to_cleaned_csv_file())
+df = dcp.import_csv_to_df(data_path.get_path_to_cleaned_csv_file())
 
-dv.simple_stats(dataframe)
+#dv.simple_stats(df)
 
-# dv.histogram(dataframe, "Native country")
+# dv.histogram(df, "Native country")
+
+print(dv.count_unique_values(df, "Native country", isOrderAscending=False))
 
 

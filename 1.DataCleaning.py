@@ -4,12 +4,13 @@ from _DataPath import _DataPath as data_path_class
 import os
 
 # Cleaning the data before processing
-dp = data_path_class()
+data_path = data_path_class()
+dcp = dcp_class()
 dv = dv_class()
-dc = dcp_class()
+
 
 # Removing rows with unvavailable data
-dc.remove_rows_with_data_unavailable_from_csv_file(dp.get_path_to_csv_folder(), dp.get_path_to_original_csv_file())
+dcp.remove_rows_with_data_unavailable_from_csv_file(data_path.get_path_to_csv_folder(), data_path.get_path_to_original_csv_file())
 
 
     
