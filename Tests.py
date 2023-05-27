@@ -10,11 +10,20 @@ dv = dv_class()
 # Getting the dataframe
 df = dcp.import_csv_to_df(data_path.get_path_to_cleaned_csv_file())
 
+print(df.describe())
+stats = df.describe().values.tolist()
+# print(stats)
+print(os.linesep)
+
+print(dv.print_describe_nested_list_to_csv_string(stats))
+
 # splitted_text = dv.count_unique_values(df, 'Native country', is_order_ascending=False)
 # for line in splitted_text:
 #     print(line)
 
-stats = df.describe()
-print(stats)
+data = dv.count_unique_values(df, "Native country", False)
+print(data)
 print(os.linesep)
-dv.table_data_with_label_row_to_csv(stats)
+dv.table_data_with_label_row_ignored_to_csv(data)
+
+

@@ -35,8 +35,17 @@ if os.path.exists(path_to_txt_file):
 # data_array = dcp.import_csv_to_numpy_array(data_path.get_path_to_cleaned_csv_file())
 df = dcp.import_csv_to_df(path_to_cleaned_data)
 
+# Common to all reports
 dv.simple_stats(df)
-dv.print_to_txt_file(dv.count_unique_values(df, "Native country", False))
+
+# Specific to this report
+native_country_data = dv.count_unique_values(df, "Native country", False)
+   # To txt
+dv.print_to_txt_file(native_country_data)
+   # To csv
+dv.print_to_csv_file(",Unique Values,Count")
+dv.print_to_csv_file(dv.table_data_with_label_row_ignored_to_csv(native_country_data))
+
 
 # dv.histogram(df, "Native country")
 
