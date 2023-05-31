@@ -1,0 +1,72 @@
+
+
+Number of rows,32561
+Number of features,15
+
+
+Age,Workclass,Fnlwgt,Education,Education-Num,Marital status,Occupation,Relationship,Race,Sex,Capital gain,Capital loss,Hours-per-week,Native country,">50K, <=50K"
+
+39, State-gov,77516, Bachelors,13, Never-married, Adm-clerical, Not-in-family, White, Male,2174,0,40, United-States, <=50K
+
+50, Self-emp-not-inc,83311, Bachelors,13, Married-civ-spouse, Exec-managerial, Husband, White, Male,0,0,13, United-States, <=50K
+
+38, Private,215646, HS-grad,9, Divorced, Handlers-cleaners, Not-in-family, White, Male,0,0,40, United-States, <=50K
+
+53, Private,234721, 11th,7, Married-civ-spouse, Handlers-cleaners, Husband, Black, Male,0,0,40, United-States, <=50K
+
+
+
+,Age,Fnlwgt,Education-Num,Capital gain,Capital loss,Hours-per-week
+count,32561.0,32561.0,32561.0,32561.0,32561.0,32561.0
+mean,38.58164675532078,189778.36651208502,10.0806793403151,1077.6488437087312,87.303829734959,40.437455852092995
+std,13.640432553581341,105549.97769702224,2.5727203320673877,7385.292084840338,402.9602186489998,12.347428681731843
+min,17.0,12285.0,1.0,0.0,0.0,1.0
+25%,28.0,117827.0,9.0,0.0,0.0,40.0
+50%,37.0,178356.0,10.0,0.0,0.0,40.0
+75%,48.0,237051.0,12.0,0.0,0.0,45.0
+max,90.0,1484705.0,16.0,99999.0,4356.0,99.0
+
+,Unique Values,Count
+0,United-States,29170
+1,Mexico,643
+2,?,583
+3,Philippines,198
+4,Germany,137
+5,Canada,121
+6,Puerto-Rico,114
+7,El-Salvador,106
+8,India,100
+9,Cuba,95
+10,England,90
+11,Jamaica,81
+12,South,80
+13,China,75
+14,Italy,73
+15,Dominican-Republic,70
+16,Vietnam,67
+17,Guatemala,64
+18,Japan,62
+19,Poland,60
+20,Columbia,59
+21,Taiwan,51
+22,Haiti,44
+23,Iran,43
+24,Portugal,37
+25,Nicaragua,34
+26,Peru,31
+27,France,29
+28,Greece,29
+29,Ecuador,28
+30,Ireland,24
+31,Hong,20
+33,Trinadad&Tobago,19
+32,Cambodia,19
+34,Laos,18
+35,Thailand,18
+36,Yugoslavia,16
+37,Outlying-US(Guam-USVI-etc),14
+38,Honduras,13
+39,Hungary,13
+40,Scotland,12
+41,Holand-Netherlands,1
+
