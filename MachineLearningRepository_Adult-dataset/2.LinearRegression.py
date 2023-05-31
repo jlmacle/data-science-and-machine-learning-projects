@@ -8,5 +8,5 @@ dcp = dcp_class()
 lr = lr_class()
 
 # Importing the cleaned data for processing
-data_array = dcp.import_csv_to_numpy_array(data_path.get_path_to_cleaned_csv_file())
+data_array = dcp.import_csv_to_numpy_array(data_path.get_path_to_cleaned_csv_file(),skip_header_option=0)
 
