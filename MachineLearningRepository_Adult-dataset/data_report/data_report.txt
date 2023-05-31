@@ -1,0 +1,70 @@
+
+
+Number of rows		32561
+Number of features	15
+
+
+Head of the cleaned data :
+   Age          Workclass  Fnlwgt   Education  ...  Capital loss Hours-per-week  Native country >50K, <=50K
+0   39          State-gov   77516   Bachelors  ...             0             40   United-States       <=50K
+1   50   Self-emp-not-inc   83311   Bachelors  ...             0             13   United-States       <=50K
+2   38            Private  215646     HS-grad  ...             0             40   United-States       <=50K
+3   53            Private  234721        11th  ...             0             40   United-States       <=50K
+4   28            Private  338409   Bachelors  ...             0             40            Cuba       <=50K
+
+[5 rows x 15 columns]
+
+
+Description of the dataframe :
+                Age        Fnlwgt  Education-Num  Capital gain  Capital loss  Hours-per-week
+count  32561.000000  3.256100e+04   32561.000000  32561.000000  32561.000000    32561.000000
+mean      38.581647  1.897784e+05      10.080679   1077.648844     87.303830       40.437456
+std       13.640433  1.055500e+05       2.572720   7385.292085    402.960219       12.347429
+min       17.000000  1.228500e+04       1.000000      0.000000      0.000000        1.000000
+25%       28.000000  1.178270e+05       9.000000      0.000000      0.000000       40.000000
+50%       37.000000  1.783560e+05      10.000000      0.000000      0.000000       40.000000
+75%       48.000000  2.370510e+05      12.000000      0.000000      0.000000       45.000000
+max       90.000000  1.484705e+06      16.000000  99999.000000   4356.000000       99.000000
+                  Unique Values  Count
+0                 United-States  29170
+1                        Mexico    643
+2                             ?    583
+3                   Philippines    198
+4                       Germany    137
+5                        Canada    121
+6                   Puerto-Rico    114
+7                   El-Salvador    106
+8                         India    100
+9                          Cuba     95
+10                      England     90
+11                      Jamaica     81
+12                        South     80
+13                        China     75
+14                        Italy     73
+15           Dominican-Republic     70
+16                      Vietnam     67
+17                    Guatemala     64
+18                        Japan     62
+19                       Poland     60
+20                     Columbia     59
+21                       Taiwan     51
+22                        Haiti     44
+23                         Iran     43
+24                     Portugal     37
+25                    Nicaragua     34
+26                         Peru     31
+27                       France     29
+28                       Greece     29
+29                      Ecuador     28
+30                      Ireland     24
+31                         Hong     20
+33              Trinadad&Tobago     19
+32                     Cambodia     19
+34                         Laos     18
+35                     Thailand     18
+36                   Yugoslavia     16
+37   Outlying-US(Guam-USVI-etc)     14
+38                     Honduras     13
+39                      Hungary     13
+40                     Scotland     12
+41           Holand-Netherlands      1
