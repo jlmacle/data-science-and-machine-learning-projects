@@ -1,6 +1,7 @@
 from jl_ml_utils.data_cleaning_and_processing import DataCleaningAndProcessing as dcp_class
 from jl_ml_utils.data_visualization import DataVisualization as dv_class
 from _DataPath import _DataPath as data_path_class
+import pandas as pd
 import os
 
 # Planning a data exploration based on unsupervised learning and visualization
@@ -42,10 +43,12 @@ dv.simple_stats(df)
 # Specific to this report
 native_country_data = dv.count_unique_values(df, "Native country", False)
    # To txt
+dv.print_to_txt_file(os.linesep)
 dv.print_to_txt_file(native_country_data)
    # To csv
 dv.print_to_csv_file(",Unique Values,Count")
 dv.print_to_csv_file(dv.table_data_with_label_row_ignored_to_csv(native_country_data))
+
 
 # Issues encountered:
 # DtypeWarning: Columns (76,89) have mixed types. Specify dtype option on import or set low_memory=False.
