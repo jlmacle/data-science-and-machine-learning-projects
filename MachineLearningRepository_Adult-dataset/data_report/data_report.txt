@@ -5,12 +5,12 @@ Number of features	15
 
 
 Head of the cleaned data :
-   Age          Workclass  Fnlwgt   Education  ...  Capital loss Hours-per-week  Native country >50K, <=50K
-0   39          State-gov   77516   Bachelors  ...             0             40   United-States       <=50K
-1   50   Self-emp-not-inc   83311   Bachelors  ...             0             13   United-States       <=50K
-2   38            Private  215646     HS-grad  ...             0             40   United-States       <=50K
-3   53            Private  234721        11th  ...             0             40   United-States       <=50K
-4   28            Private  338409   Bachelors  ...             0             40            Cuba       <=50K
+   Age          Workclass  Fnlwgt  ... Hours-per-week  Native country >50K, <=50K
+0   39          State-gov   77516  ...             40   United-States       <=50K
+1   50   Self-emp-not-inc   83311  ...             13   United-States       <=50K
+2   38            Private  215646  ...             40   United-States       <=50K
+3   53            Private  234721  ...             40   United-States       <=50K
+4   28            Private  338409  ...             40            Cuba       <=50K
 
 [5 rows x 15 columns]
 
@@ -27,6 +27,7 @@ min       17.000000  1.228500e+04       1.000000      0.000000      0.000000    
 max       90.000000  1.484705e+06      16.000000  99999.000000   4356.000000       99.000000
 
 
+View over the most represented native countries
                   Unique Values  Count
 0                 United-States  29170
 1                        Mexico    643
@@ -70,3 +71,27 @@ max       90.000000  1.484705e+06      16.000000  99999.000000   4356.000000    
 39                      Hungary     13
 40                     Scotland     12
 41           Holand-Netherlands      1
+
+
+View over the most represented occupations under high school grad
+       Unique Values  Count
+0            Private  10985
+1   Self-emp-not-inc   1172
+2                  ?    960
+3          Local-gov    657
+4       Self-emp-inc    349
+5          State-gov    327
+6        Federal-gov    289
+7        Without-pay     10
+8       Never-worked      5
+
+
+View over the most represented occupations with a master's degree
+       Unique Values  Count
+0            Private    894
+1          Local-gov    342
+2          State-gov    169
+3   Self-emp-not-inc    124
+4       Self-emp-inc     79
+5        Federal-gov     67
+6                  ?     48

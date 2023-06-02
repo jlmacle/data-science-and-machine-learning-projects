@@ -26,6 +26,7 @@ min,17.0,12285.0,1.0,0.0,0.0,1.0
 75%,48.0,237051.0,12.0,0.0,0.0,45.0
 max,90.0,1484705.0,16.0,99999.0,4356.0,99.0
 
+View over the most represented native countries
 ,Unique Values,Count
 0,United-States,29170
 1,Mexico,643
@@ -69,4 +70,26 @@ max,90.0,1484705.0,16.0,99999.0,4356.0,99.0
 39,Hungary,13
 40,Scotland,12
 41,Holand-Netherlands,1
+
+View over the most represented occupations under high school grad
+,Unique Values,Count
+0,Private,10985
+1,Self-emp-not-inc,1172
+2,?,960
+3,Local-gov,657
+4,Self-emp-inc,349
+5,State-gov,327
+6,Federal-gov,289
+7,Without-pay,10
+8,Never-worked,5
+
+View over the most represented occupations with a master's degree
+,Unique Values,Count
+0,Private,894
+1,Local-gov,342
+2,State-gov,169
+3,Self-emp-not-inc,124
+4,Self-emp-inc,79
+5,Federal-gov,67
+6,?,48
 
