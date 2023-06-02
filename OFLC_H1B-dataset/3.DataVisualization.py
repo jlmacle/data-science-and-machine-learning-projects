@@ -38,6 +38,7 @@ df = dcp.import_csv_to_df(path_to_cleaned_data,hasLowMemoryOption=False)
     # Unique count of values for "SOC_TITLE" column, listing the job titles
 Job_types_data = dv.count_unique_values(df, "SOC_TITLE", is_order_ascending=False)
     # To txt
+dv.print_to_txt_file("View over the most represented job types in the dataset")
 dv.print_to_txt_file(Job_types_data)
     # To csv
 dv.print_to_csv_file(",Unique Values,Count")
