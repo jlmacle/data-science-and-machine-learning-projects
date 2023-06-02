@@ -10,25 +10,25 @@ dcp = dcp_class()
 dv = dv_class()
 
 # Using a csv file for easier data imports
-path_to_folder = os.path.join(os.getcwd(),"MachineLearningRepository_Adult-dataset","data_report")
-csv_report_file_name = "data_report.csv"
-txt_report_file_name = "data_report.txt"
+path_to_folder_with_data_for_reporting = os.path.join(os.getcwd(),"MachineLearningRepository_Adult-dataset","data_for_report")
+csv_report_file_name = "data_for_report.csv"
+txt_report_file_name = "data_for_report.txt"
 path_to_cleaned_data = data_path.get_path_to_cleaned_csv_file()
 
 # Setting the folder path and csv/txt files names
-dv.set_report_folder_path(path_to_folder)
+dv.set_report_folder_path(path_to_folder_with_data_for_reporting)
 dv.set_csv_report_file_name(csv_report_file_name)
 dv.set_txt_report_file_name(txt_report_file_name)
 dv.set_path_to_cleaned_data(path_to_cleaned_data)
 
 # Deleting the files if existing
 print("** Deleting existing files **")
-path_to_csv_file = os.path.join(path_to_folder,csv_report_file_name)
+path_to_csv_file = os.path.join(path_to_folder_with_data_for_reporting,csv_report_file_name)
 if os.path.exists(path_to_csv_file):
     os.remove(path_to_csv_file)
     print("Existing csv file deleted")
 
-path_to_txt_file = os.path.join(path_to_folder, txt_report_file_name)
+path_to_txt_file = os.path.join(path_to_folder_with_data_for_reporting, txt_report_file_name)
 if os.path.exists(path_to_txt_file):
     os.remove(path_to_txt_file)
     print("Existing txt file deleted")
