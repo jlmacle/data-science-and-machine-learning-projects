@@ -11,24 +11,24 @@ dv = dv_class()
 # Using a csv file for easier data imports
 path_to_data_folder = data_path.get_path_to_data_folder()
 path_to_cleaned_data = os.path.join(path_to_data_folder,"Data-Restricted-to-computer-related-fields_1_rows-with-commas-only-removed.csv")
-path_to_report_folder = os.path.join(os.getcwd(),"OFLC_H1B-dataset","data_report")
-csv_report_file_name = "data_report.csv"
-txt_report_file_name = "data_report.txt"
+path_to_report_data_folder = os.path.join(os.getcwd(),"OFLC_H1B-dataset","data_for_report")
+csv_report_file_name = "data_for_report.csv"
+txt_report_file_name = "data_for_report.txt"
 
 # Setting the folder path and csv/txt files names
-dv.set_report_folder_path(path_to_report_folder)
+dv.set_report_folder_path(path_to_report_data_folder)
 dv.set_csv_report_file_name(csv_report_file_name)
 dv.set_txt_report_file_name(txt_report_file_name)
 dv.set_path_to_cleaned_data(path_to_cleaned_data)
 
 # Deleting the files if existing
 print("** Deleting existing files if any **")
-path_to_csv_file = os.path.join(path_to_report_folder,csv_report_file_name)
+path_to_csv_file = os.path.join(path_to_report_data_folder,csv_report_file_name)
 if os.path.exists(path_to_csv_file):
     os.remove(path_to_csv_file)
     print("Existing csv file deleted")
 
-path_to_txt_file = os.path.join(path_to_report_folder, txt_report_file_name)
+path_to_txt_file = os.path.join(path_to_report_data_folder, txt_report_file_name)
 if os.path.exists(path_to_txt_file):
     os.remove(path_to_txt_file)
     print("Existing txt file deleted")
