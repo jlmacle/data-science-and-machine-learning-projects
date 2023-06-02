@@ -53,14 +53,9 @@ dv.print_to_csv_file("View over the most represented native countries")
 dv.print_to_csv_file(",Unique Values,Count")
 dv.print_to_csv_file(dv.table_data_with_label_row_ignored_to_csv(native_country_data))
 
-# TODO: a quick experiment to clean up
 # A view on the most represented occupations under high school grad
 df_less_than_high_school_grad = df[df["Education-Num"] <= 9]
 occupation_data_for_less_than_high_school_grad = dv.count_unique_values(df_less_than_high_school_grad, "Workclass", False)
-print(os.linesep)
-print("View over the most represented occupations under high school grad")
-print(occupation_data_for_less_than_high_school_grad)
-
    # To txt
 dv.print_to_txt_file(os.linesep)
 dv.print_to_txt_file("View over the most represented occupations under high school grad")
@@ -70,11 +65,9 @@ dv.print_to_csv_file("View over the most represented occupations under high scho
 dv.print_to_csv_file(",Unique Values,Count")
 dv.print_to_csv_file(dv.table_data_with_label_row_ignored_to_csv(occupation_data_for_less_than_high_school_grad))
 
-
-print(os.linesep)
+# A view over the most represented occupations with a master's degree
 df_master_s_degree = df[df["Education-Num"] == 14]
 occupation_data_for_master_s_degree = dv.count_unique_values(df_master_s_degree, "Workclass", False)
-print(occupation_data_for_master_s_degree)
 # To txt
 dv.print_to_txt_file(os.linesep)
 dv.print_to_txt_file("View over the most represented occupations with a master's degree")
