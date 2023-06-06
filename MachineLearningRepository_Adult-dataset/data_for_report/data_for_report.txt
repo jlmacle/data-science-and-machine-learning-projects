@@ -5,12 +5,12 @@ Number of features	15
 
 
 Head of the cleaned data :
-   Age          Workclass  Fnlwgt  ... Hours-per-week  Native country >50K, <=50K
-0   39          State-gov   77516  ...             40   United-States       <=50K
-1   50   Self-emp-not-inc   83311  ...             13   United-States       <=50K
-2   38            Private  215646  ...             40   United-States       <=50K
-3   53            Private  234721  ...             40   United-States       <=50K
-4   28            Private  338409  ...             40            Cuba       <=50K
+   Age          Workclass  Fnlwgt   Education  ...  Capital loss Hours-per-week  Native country >50K, <=50K
+0   39          State-gov   77516   Bachelors  ...             0             40   United-States       <=50K
+1   50   Self-emp-not-inc   83311   Bachelors  ...             0             13   United-States       <=50K
+2   38            Private  215646     HS-grad  ...             0             40   United-States       <=50K
+3   53            Private  234721        11th  ...             0             40   United-States       <=50K
+4   28            Private  338409   Bachelors  ...             0             40            Cuba       <=50K
 
 [5 rows x 15 columns]
 
@@ -95,3 +95,9 @@ View over the most represented occupations with a master's degree
 4       Self-emp-inc     79
 5        Federal-gov     67
 6                  ?     48
+
+
+View over the most represented paycheck category for individuals with a master's degree
+  Unique Values  Count
+0          >50K    959
+1         <=50K    764
