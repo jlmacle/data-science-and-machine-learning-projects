@@ -1,2 +1,4 @@
 OFLC_H1B-dataset/data_source/
 OFLC_H1B-dataset/data/*.csv
+MachineLearningRepository_Adult-dataset/__pycache__
+OFLC_H1B-dataset\__pycache__
