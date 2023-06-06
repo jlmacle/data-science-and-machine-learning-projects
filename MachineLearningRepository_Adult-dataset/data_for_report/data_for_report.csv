@@ -19,7 +19,7 @@ Age,Workclass,Fnlwgt,Education,Education-Num,Marital status,Occupation,Relations
 ,Age,Fnlwgt,Education-Num,Capital gain,Capital loss,Hours-per-week
 count,32561.0,32561.0,32561.0,32561.0,32561.0,32561.0
 mean,38.58164675532078,189778.36651208502,10.0806793403151,1077.6488437087312,87.303829734959,40.437455852092995
-std,13.640432553581146,105549.97769702233,2.5727203320673406,7385.292084839299,402.960218649059,12.34742868173081
+std,13.640432553581341,105549.97769702224,2.5727203320673877,7385.292084840338,402.9602186489998,12.347428681731843
 min,17.0,12285.0,1.0,0.0,0.0,1.0
 25%,28.0,117827.0,9.0,0.0,0.0,40.0
 50%,37.0,178356.0,10.0,0.0,0.0,40.0
@@ -92,4 +92,9 @@ View over the most represented occupations with a master's degree
 4,Self-emp-inc,79
 5,Federal-gov,67
 6,?,48
+
+View over the most represented paycheck category for individuals with a master's degree
+,Unique Values,Count
+0,>50K,959
+1,<=50K,764
 

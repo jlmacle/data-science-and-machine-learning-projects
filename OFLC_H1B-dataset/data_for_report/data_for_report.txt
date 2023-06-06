@@ -1,0 +1,15 @@
+View over the most represented job types in the dataset
+                                        Unique Values  Count
+0                                 Software Developers  59652
+1               Computer Systems Engineers/Architects   6095
+2                           Computer Systems Analysts   5531
+3           Computer and Information Systems Managers   5523
+4             Information Technology Project Managers   4443
+..                                                ...    ...
+62                    COMPUTER OCCUPATIONS, ALL OTHER      1
+61  Software Quality Assurance Analysts and Tester...      1
+60                  Sr Engineer, Systems Architecture      1
+58                                Software developers      1
+78        NETWORK AND COMPUTER SYSTEMS ADMINISTRATORS      1
+
+[79 rows x 2 columns]
