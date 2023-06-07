@@ -1,6 +1,6 @@
 View over the most represented job types in the dataset
                                         Unique Values  Count
-0                                 Software Developers  59652
+0                                 Software Developers  59654
 1               Computer Systems Engineers/Architects   6095
 2                           Computer Systems Analysts   5531
 3           Computer and Information Systems Managers   5523
