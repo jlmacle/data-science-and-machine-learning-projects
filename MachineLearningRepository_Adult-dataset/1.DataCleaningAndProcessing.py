@@ -16,7 +16,7 @@ df= dcp.import_csv_to_df( data_path.get_path_to_cleaned_csv_file(),low_memory_se
 # Pre-cleaning before using a pivot table
 results = dcp.pre_pivot_table_pre_cleaning(df, "Education-Num", "Education",print_data_for_unique_values=False)
 print(results)
-# Using the previous results to locate the rows with missing data
+# Using the previous results to locate the rows with the data anomalies
 lines = dcp.line_finding_given_labels_and_column(df,"Education", [" Bachelors2", " Masters2"," Some-college2"])
 
 
