@@ -14,7 +14,7 @@ data_path = _data_path.get_data_path_object()
 """
 
 # 1. Data imports
-path_to_data_folder = data_path.get_path_to_csv_folder()
+path_to_csv_folder = data_path.get_path_to_csv_folder()
 filtered_data_file_name = data_path.get_file_name_for_csv_with_original_data()
 
 # 2. Data encoding fixing 
@@ -25,7 +25,10 @@ filtered_data_file_name = data_path.get_file_name_for_csv_with_original_data()
     # --> Fixed by converting the file to utf-8 in reading and writing in the method remove_rows_with_commas_only()
 
 # 3. Row removals
-dcp.remove_rows_with_commas_only(path_to_data_folder, filtered_data_file_name, 9)
+cleaned_file_name = dcp.remove_rows_with_commas_only(path_to_csv_folder, filtered_data_file_name, 9)
+#  Keeping with empty data, as this is not an issue for the analysis
+#  Actually removing the rows with empty data would prevent the analysis of the data
+
 
 
 
