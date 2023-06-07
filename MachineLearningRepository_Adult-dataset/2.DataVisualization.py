@@ -82,14 +82,6 @@ dv.print_to_csv_file("View over the most represented paycheck category for indiv
 dv.print_to_csv_file(",Unique Values,Count")
 dv.print_to_csv_file(dv.table_data_with_label_row_ignored_to_csv(income_data_for_master_s_degree))
 
-# Verifying that all values for the column "Education" are unique for a given value of "Education-Num"
-potential_values_for_education_num = df["Education-Num"].unique()
-# For every values, verification that the corresponding values for "Education" are unique
-for value in potential_values_for_education_num:
-   education_num_group_data_for_specific_value = df[df["Education-Num"] == value]
-   df_related_to_education_for_the_specific_value_of_eduction_num = education_num_group_data_for_specific_value["Education"]
-   # Verifying the number of values available
-   print(df_related_to_education_for_the_specific_value_of_eduction_num.unique())
 
 # Issues encountered:
 # DtypeWarning: Columns (76,89) have mixed types. Specify dtype option on import or set low_memory=False.
