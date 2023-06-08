@@ -14,14 +14,19 @@ dcp.drop_duplicates_and_remove_rows_with_data_unavailable_from_csv_file(data_pat
 
 df= dcp.import_csv_to_df( data_path.get_path_to_cleaned_csv_file(),low_memory_setting=False)
 # Pre-cleaning before using a pivot table
+# File used : adult_na_and_duplicates_removed.csv
 results = dcp.pre_pivot_table_pre_cleaning(df, "Education-Num", "Education",print_data_for_unique_values=False)
+print()
+print("Data in need of cleaning")
 print(results)
 # Using the previous results to locate the rows with the data anomalies
-lines = dcp.line_finding_given_labels_and_column(df,"Education", [" Bachelors2", " Masters2"," Some-college2"])
-
-
-
+if(results != {}):
+    print()
+    lines = dcp.line_finding_given_labels_and_column(df,"Education", [" Bachelors2", " Masters2"," Some-college2"])
+    print()
 # Cleaning the data and re-setting the value for the cleaned data file name
+# New file name used in data_path.get_path_to_cleaned_csv_file(): 
+# adult_na_and_duplicates_removed-education_column_cleaned.csv
 
     
 

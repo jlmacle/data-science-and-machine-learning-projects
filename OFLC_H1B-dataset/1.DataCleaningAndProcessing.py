@@ -1,6 +1,7 @@
 from jl_ml_utils.data_cleaning_and_processing import DataCleaningAndProcessing as dcp_class
 from jl_ml_utils.data_visualization import DataVisualization as dv_class
 from _DataPath import _DataPath as _data_path_class
+import os
 
 # Cleaning the data before processing
 dcp = dcp_class()
@@ -28,6 +29,16 @@ filtered_data_file_name = data_path.get_file_name_for_csv_with_original_data()
 cleaned_file_name = dcp.remove_rows_with_commas_only(path_to_csv_folder, filtered_data_file_name, 9)
 #  Keeping with empty data, as this is not an issue for the analysis
 #  Actually removing the rows with empty data would prevent the analysis of the data
+
+# 4. Column cell content concatenation
+path_to_cleaned_data = os.path.join(data_path.get_path_to_csv_folder(), cleaned_file_name)
+df = dcp.import_csv_to_df(path_to_cleaned_data,low_memory_setting=False)
+df = dcp.concatenate_words_in_df_column(df,"JOB_TITLE")
+path_to_new_cleaned_data = path_to_cleaned_data.split(".")[0] + "-Job_titles_concatenated.csv"
+df.to_csv(path_to_new_cleaned_data, index=True)
+# New value for self.data_path.set_file_name_for_csv_with_cleaned_data
+# set in _DataPath.py
+
 
 
 
