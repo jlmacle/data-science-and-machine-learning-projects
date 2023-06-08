@@ -6,10 +6,10 @@ View over the most represented job types in the dataset
 3                                            Architect   1035
 4                              Staff_Software_Engineer    737
 ...                                                ...    ...
-14305           SAP_SD_SOFTWARE_APPLICATION_CONSULTANT      1
-14304                      Network_Administrator_-_III      1
-14303          Senior_IT_Engineer_(Senior_Manager,_IT)      1
-14302                     Software_Engineer_1615.29631      1
-26767  Engineer_4,_Product_Development_and_Engineering      1
+14304                             Scrum_Master/QA_Lead      1
+14303            Enterprise_Programmer_Analyst__Senior      1
+14302                       Software_Engineering__SMTS      1
+14301                         Sr._WebMethods_Developer      1
+26763  Engineer_4__Product_Development_and_Engineering      1
 
-[26768 rows x 2 columns]
+[26764 rows x 2 columns]
