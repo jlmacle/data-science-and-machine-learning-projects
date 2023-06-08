@@ -8,7 +8,7 @@ _data_path = _data_path_class()
 data_path = _data_path.get_data_path_object()
 
 path_to_cleaned_data = data_path.get_path_to_cleaned_csv_file()
-df = dcp.import_csv_to_df(path_to_cleaned_data, has_low_memory_option=False)
+df = dcp.import_csv_to_df(path_to_cleaned_data, low_memory_setting=False)
 
 ea.df_info(df)
 
