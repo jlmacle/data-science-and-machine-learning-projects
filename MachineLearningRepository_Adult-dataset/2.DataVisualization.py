@@ -101,6 +101,24 @@ dv.print_to_csv_file("A view on 'Education-Num','Education', '>50K' and '<=50K'"
 dv.print_to_csv_file(dv.table_data_to_csv(pivot_table, 2))
 
 
+pd.set_option('display.max_rows', None)
+# With 'Workclass' and 'Occupation' as first columns,
+# using the values of column '>50K, <=50K' to create new columns
+pivot_table = pd.pivot_table(df, index=['Occupation'], columns='>50K, <=50K', aggfunc='size', fill_value=0)
+pivot_table.columns = ['<=50K', '>50K']
+pivot_table = pivot_table.sort_values(by=['>50K'], ascending=False)
+   # To txt
+dv.print_to_txt_file("")
+dv.print_to_txt_file("A view on 'Workclass','Occupation', '>50K' and '<=50K'")
+dv.print_to_txt_file(pivot_table)
+   # To csv
+dv.print_to_csv_file("")
+dv.print_to_csv_file("A view on 'Workclass','Occupation', '>50K' and '<=50K'")
+# 2 rows to ignore
+dv.print_to_csv_file(dv.table_data_to_csv(pivot_table, 2))
+
+
+
 # Issues encountered:
 # DtypeWarning: Columns (76,89) have mixed types. Specify dtype option on import or set low_memory=False.
 # return pd.read_csv(path_to_csv_file)
