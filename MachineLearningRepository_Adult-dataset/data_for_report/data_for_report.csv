@@ -1,10 +1,10 @@
-
 
-Number of rows,32537
+Number of rows,32538
 Number of features,15
-
 
 Age,Workclass,Fnlwgt,Education,Education-Num,Marital status,Occupation,Relationship,Race,Sex,Capital gain,Capital loss,Hours-per-week,Native country,">50K, <=50K"
+
+39.0, State-gov,77516, Bachelors,13, Never-married, Adm-clerical, Not-in-family, White, Male,2174,0,40, United-States, <=50K
 
 39.0, State-gov,77516, Bachelors,13, Never-married, Adm-clerical, Not-in-family, White, Male,2174,0,40, United-States, <=50K
 
@@ -12,23 +12,20 @@ Age,Workclass,Fnlwgt,Education,Education-Num,Marital status,Occupation,Relations
 
 38.0, Private,215646, HS-grad,9, Divorced, Handlers-cleaners, Not-in-family, White, Male,0,0,40, United-States, <=50K
 
-53.0, Private,234721, 11th,7, Married-civ-spouse, Handlers-cleaners, Husband, Black, Male,0,0,40, United-States, <=50K
-
-
 
 ,Age,Fnlwgt,Education-Num,Capital gain,Capital loss,Hours-per-week
-count,32537.0,32537.0,32537.0,32537.0,32537.0,32537.0
-mean,38.585548759873376,189780.84851092604,10.081814549589698,1078.4437409718166,87.36822694163568,40.44032947106371
-std,13.637983518469731,105556.47100949362,2.5716330100709084,7387.957424192858,403.1018330630816,12.346889182124375
+count,32538.0,32538.0,32538.0,32538.0,32538.0,32538.0
+mean,38.5855614973262,189777.39824205544,10.08190423504825,1078.4774110271067,87.36554182801648,40.44031593828754
+std,13.637774133868447,105556.68368130835,2.571644377172519,7387.846388183663,403.0959294909541,12.346699685847229
 min,17.0,12285.0,1.0,0.0,0.0,1.0
-25%,28.0,117827.0,9.0,0.0,0.0,40.0
-50%,37.0,178356.0,10.0,0.0,0.0,40.0
-75%,48.0,236993.0,12.0,0.0,0.0,45.0
+25%,28.0,117818.75,9.0,0.0,0.0,40.0
+50%,37.0,178354.5,10.0,0.0,0.0,40.0
+75%,48.0,236992.75,12.0,0.0,0.0,45.0
 max,90.0,1484705.0,16.0,99999.0,4356.0,99.0
 
 View over the most represented native countries
 ,Unique Values,Count
-0,United-States,29153
+0,United-States,29154
 1,Mexico,639
 2,?,582
 3,Philippines,198
@@ -97,4 +94,23 @@ View over the most represented paycheck category for individuals with a master's
 ,Unique Values,Count
 0,>50K,959
 1,<=50K,763
+
+
+A view on 'Education-Num','Education', '>50K' and '<=50K'
+1,Preschool,50,0
+2,1st-4th,160,6
+3,5th-6th,316,16
+4,7th-8th,605,40
+5,9th,487,27
+6,10th,871,62
+7,11th,1115,60
+8,12th,400,33
+9,HS-grad,8820,1674
+10,Some-college,5896,1386
+11,Assoc-voc,1021,361
+12,Assoc-acdm,802,265
+13,Bachelors,3133,2221
+14,Masters,763,959
+15,Prof-school,153,423
+16,Doctorate,107,306
 
