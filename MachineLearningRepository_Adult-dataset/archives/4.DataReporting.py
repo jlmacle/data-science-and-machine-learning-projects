@@ -1,7 +1,7 @@
 from _DataPath import _DataPath as data_path_class 
-from jl_ds_ml_utils.data_cleaning_and_processing import DataCleaningAndProcessing as dcp_class
-from jl_ds_ml_utils.data_reporting_ReportLab_Archivedg import DataReporting as dr_class
-from jl_ds_ml_utils.data_visualization import DataVisualization as dv_class
+from ds_ml_utils.data_cleaning_and_processing import DataCleaningAndProcessing as dcp_class
+from ds_ml_utils.data_reporting_ReportLab_Archivedg import DataReporting as dr_class
+from ds_ml_utils.data_visualization import DataVisualization as dv_class
 
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.pdfbase import pdfmetrics
