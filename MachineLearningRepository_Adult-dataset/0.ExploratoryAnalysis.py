@@ -1,5 +1,5 @@
-from jl_ds_ml_utils.exploratory_analysis import ExploratoryAnalysis as ea_class
-from jl_ds_ml_utils.data_cleaning_and_processing import DataCleaningAndProcessing as dcp_class
+from ds_ml_utils.exploratory_analysis import ExploratoryAnalysis as ea_class
+from ds_ml_utils.data_cleaning_and_processing import DataCleaningAndProcessing as dcp_class
 from _DataPath import _DataPath as _data_path_class
 
 ea = ea_class()
