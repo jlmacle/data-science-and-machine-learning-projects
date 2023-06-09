@@ -1,5 +1,5 @@
-from jl_ml_utils.data_cleaning_and_processing import DataCleaningAndProcessing as dcp_class
-from jl_ml_utils.data_visualization import DataVisualization as dv_class
+from jl_ds_ml_utils.data_cleaning_and_processing import DataCleaningAndProcessing as dcp_class
+from jl_ds_ml_utils.data_visualization import DataVisualization as dv_class
 from _DataPath import _DataPath as _data_path_class
 import os
 

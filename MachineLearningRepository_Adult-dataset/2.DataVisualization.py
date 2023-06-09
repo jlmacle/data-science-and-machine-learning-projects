@@ -1,7 +1,8 @@
-from jl_ml_utils.data_cleaning_and_processing import DataCleaningAndProcessing as dcp_class
-from jl_ml_utils.data_visualization import DataVisualization as dv_class
+from jl_ds_ml_utils.data_cleaning_and_processing import DataCleaningAndProcessing as dcp_class
+from jl_ds_ml_utils.data_visualization import DataVisualization as dv_class
 from _DataPath import _DataPath as _data_path_class
 import pandas as pd
+import matplotlib.pyplot as plt
 import os
 
 _data_path = _data_path_class()
@@ -117,8 +118,22 @@ dv.print_to_csv_file("A view on 'Workclass','Occupation', '>50K' and '<=50K'")
 # 2 rows to ignore
 dv.print_to_csv_file(dv.table_data_to_csv(pivot_table, 2))
 
+# Bar chart creation
+path_to_image = os.path.join(data_path.get_path_to_folder_with_data_for_reporting(),'IncomeDistributionByOccupation.png')
+if not os.path.exists(path_to_image):
+   fig, ax = plt.subplots(figsize=(10, 6))
+   pivot_table.sort_values(by=['>50K'], ascending=False).plot(kind='bar', ax=ax)
+      # Setting the plot labels and title
+   ax.set_xlabel('Occupation')
+   ax.set_ylabel('Count')
+   ax.set_title('Income Distribution by Occupation')
+      # Rotate the x-axis labels for better readability
+   plt.xticks(rotation=45)
+      # Display the plot
+   plt.show()
+   fig.savefig(path_to_image)
 
-
+ 
 # Issues encountered:
 # DtypeWarning: Columns (76,89) have mixed types. Specify dtype option on import or set low_memory=False.
 # return pd.read_csv(path_to_csv_file)
