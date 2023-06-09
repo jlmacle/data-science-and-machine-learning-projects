@@ -34,7 +34,8 @@ if(results != {}):
     lines = dcp.line_finding_given_labels_and_column(df,"Education", [" Bachelors2", " Masters2"," Some-college2"])
     print()
 
-df.to_csv(os.path.join(data_path.get_path_to_csv_folder(),"adult-cleaned_data_if_previous_result_was_an_empty_dict.csv"))
+
+df.to_csv(os.path.join(data_path.get_path_to_csv_folder(),"adult-cleaned_data_if_previous_result_was_an_empty_dict.csv"), index=False)
 
 # Checking the program with the cleaned data
 
