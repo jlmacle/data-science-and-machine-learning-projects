@@ -13,11 +13,13 @@ data_path = _data_path.get_data_path_object()
 # # Removing rows with duplicates and unvavailable data 
 df  = dcp.drop_duplicates_and_remove_rows_with_data_unavailable_from_csv_file(data_path.get_path_to_csv_folder(), data_path.get_file_name_for_csv_with_original_data(),low_memory_setting=False)
 
-# # Replacing "marital status" with "marital-status" in the csv file
+# # Renaming some column names 
 # # to avoid an issue at "table_data_to_csv" time
-df = df.replace("Marital status", "Marital-status")
-df = df.replace("Capital gain", "Capital-gain")
-df = df.replace("Capitl loss", "Capital-loss")
+df = df.rename(columns={"Marital status": "Marital-status",
+                        "Capital gain": "Capital-gain",
+                        "Capital loss": "Capital-loss",
+                        "Native country": "Native-country",
+                        ">50K, <=50K":">50K__<=50K"})
 
 # # Pre-cleaning before using a pivot table
 # File used : adult_na_and_duplicates_removed.csv
