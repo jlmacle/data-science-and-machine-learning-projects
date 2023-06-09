@@ -1,5 +1,5 @@
 import os
-from jl_ml_utils._data_path import DataPath as data_path_class
+from jl_ds_ml_utils._data_path import DataPath as data_path_class
 
 class _DataPath:
     def __init__(self) -> None:
