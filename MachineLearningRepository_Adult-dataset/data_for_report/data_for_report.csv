@@ -1,27 +1,51 @@
 
 Number of rows,32538
-Number of features,15
+Number of features,16
 
-Age,Workclass,Fnlwgt,Education,Education-Num,Marital status,Occupation,Relationship,Race,Sex,Capital gain,Capital loss,Hours-per-week,Native country,">50K, <=50K"
+Dataframe info :
+#,Column,Non-Null,Count,Dtype
+---,------,--------------,-----
+0,Unnamed:,0,32538,non-null,int64
+1,Age,32538,non-null,float64
+2,Workclass,32538,non-null,object
+3,Fnlwgt,32538,non-null,int64
+4,Education,32538,non-null,object
+5,Education-Num,32538,non-null,int64
+6,Marital,status,32538,non-null,object
+7,Occupation,32538,non-null,object
+8,Relationship,32538,non-null,object
+9,Race,32538,non-null,object
+10,Sex,32538,non-null,object
+11,Capital,gain,32538,non-null,int64
+12,Capital,loss,32538,non-null,int64
+13,Hours-per-week,32538,non-null,int64
+14,Native,country,32538,non-null,object
+15,>50K,,<=50K,32538,non-null,object
+dtypes:,float64(1),,int64(6),,object(9)
+memory,usage:,4.0+,MB
 
-39.0, State-gov,77516, Bachelors,13, Never-married, Adm-clerical, Not-in-family, White, Male,2174,0,40, United-States, <=50K
 
-39.0, State-gov,77516, Bachelors,13, Never-married, Adm-clerical, Not-in-family, White, Male,2174,0,40, United-States, <=50K
 
-50.0, Self-emp-not-inc,83311, Bachelors,13, Married-civ-spouse, Exec-managerial, Husband, White, Male,0,0,13, United-States, <=50K
+,Age,Workclass,Fnlwgt,Education,Education-Num,Marital status,Occupation,Relationship,Race,Sex,Capital gain,Capital loss,Hours-per-week,Native country,">50K, <=50K"
 
-38.0, Private,215646, HS-grad,9, Divorced, Handlers-cleaners, Not-in-family, White, Male,0,0,40, United-States, <=50K
+1,39.0, State-gov,77516, Bachelors,13, Never-married, Adm-clerical, Not-in-family, White, Male,2174,0,40, United-States, <=50K
+
+2,39.0, State-gov,77516, Bachelors,13, Never-married, Adm-clerical, Not-in-family, White, Male,2174,0,40, United-States, <=50K
+
+3,50.0, Self-emp-not-inc,83311, Bachelors,13, Married-civ-spouse, Exec-managerial, Husband, White, Male,0,0,13, United-States, <=50K
+
+4,38.0, Private,215646, HS-grad,9, Divorced, Handlers-cleaners, Not-in-family, White, Male,0,0,40, United-States, <=50K
 
 
 ,Age,Fnlwgt,Education-Num,Capital gain,Capital loss,Hours-per-week
-count,32538.0,32538.0,32538.0,32538.0,32538.0,32538.0
-mean,38.5855614973262,189777.39824205544,10.08190423504825,1078.4774110271067,87.36554182801648,40.44031593828754
-std,13.637774133868447,105556.68368130835,2.571644377172519,7387.846388183663,403.0959294909541,12.346699685847229
-min,17.0,12285.0,1.0,0.0,0.0,1.0
-25%,28.0,117818.75,9.0,0.0,0.0,40.0
-50%,37.0,178354.5,10.0,0.0,0.0,40.0
-75%,48.0,236992.75,12.0,0.0,0.0,45.0
-max,90.0,1484705.0,16.0,99999.0,4356.0,99.0
+count,32538.0,32538.0,32538.0,32538.0,32538.0,32538.0,32538.0
+mean,16277.918310898027,38.5855614973262,189777.39824205544,10.08190423504825,1078.4774110271067,87.36554182801648,40.44031593828754
+std,9400.05925013462,13.637774133868447,105556.68368130835,2.571644377172519,7387.846388183663,403.0959294909541,12.346699685847229
+min,1.0,17.0,12285.0,1.0,0.0,0.0,1.0
+25%,8137.25,28.0,117818.75,9.0,0.0,0.0,40.0
+50%,16275.5,37.0,178354.5,10.0,0.0,0.0,40.0
+75%,24418.75,48.0,236992.75,12.0,0.0,0.0,45.0
+max,32562.0,90.0,1484705.0,16.0,99999.0,4356.0,99.0
 
 View over the most represented native countries
 ,Unique Values,Count
@@ -113,4 +137,22 @@ A view on 'Education-Num','Education', '>50K' and '<=50K'
 14,Masters,763,959
 15,Prof-school,153,423
 16,Doctorate,107,306
+
+
+A view on 'Workclass','Occupation', '>50K' and '<=50K'
+Exec-managerial,2097,1968
+Prof-specialty,2278,1858
+Sales,2667,983
+Craft-repair,3165,929
+Adm-clerical,3262,507
+Transport-moving,1277,320
+Tech-support,644,283
+Machine-op-inspct,1751,249
+Protective-serv,438,211
+?,1652,191
+Other-service,3154,137
+Farming-fishing,877,115
+Handlers-cleaners,1283,86
+Armed-Forces,8,1
+Priv-house-serv,146,1
 
