@@ -14,13 +14,13 @@ Data columns (total 16 columns):
  3   Fnlwgt          32538 non-null  int64  
  4   Education       32538 non-null  object 
  5   Education-Num   32538 non-null  int64  
- 6   Marital status  32538 non-null  object 
+ 6   Marital-status  32538 non-null  object 
  7   Occupation      32538 non-null  object 
  8   Relationship    32538 non-null  object 
  9   Race            32538 non-null  object 
  10  Sex             32538 non-null  object 
- 11  Capital gain    32538 non-null  int64  
- 12  Capital loss    32538 non-null  int64  
+ 11  Capital-gain    32538 non-null  int64  
+ 12  Capital-loss    32538 non-null  int64  
  13  Hours-per-week  32538 non-null  int64  
  14  Native country  32538 non-null  object 
  15  >50K, <=50K     32538 non-null  object 
@@ -29,25 +29,25 @@ memory usage: 4.0+ MB
 
 
 Head of the cleaned data :
-   Unnamed: 0   Age          Workclass  ...  Hours-per-week  Native country  >50K, <=50K
-0           1  39.0          State-gov  ...              40   United-States        <=50K
-1           2  39.0          State-gov  ...              40   United-States        <=50K
-2           3  50.0   Self-emp-not-inc  ...              13   United-States        <=50K
-3           4  38.0            Private  ...              40   United-States        <=50K
-4           5  53.0            Private  ...              40   United-States        <=50K
+   Unnamed: 0   Age  ...  Native country  >50K, <=50K
+0           1  39.0  ...   United-States        <=50K
+1           2  39.0  ...   United-States        <=50K
+2           3  50.0  ...   United-States        <=50K
+3           4  38.0  ...   United-States        <=50K
+4           5  53.0  ...   United-States        <=50K
 
 [5 rows x 16 columns]
 
 Description of the dataframe :
-         Unnamed: 0           Age        Fnlwgt  ...  Capital gain  Capital loss  Hours-per-week
-count  32538.000000  32538.000000  3.253800e+04  ...  32538.000000  32538.000000    32538.000000
-mean   16277.918311     38.585561  1.897774e+05  ...   1078.477411     87.365542       40.440316
-std     9400.059250     13.637774  1.055567e+05  ...   7387.846388    403.095929       12.346700
-min        1.000000     17.000000  1.228500e+04  ...      0.000000      0.000000        1.000000
-25%     8137.250000     28.000000  1.178188e+05  ...      0.000000      0.000000       40.000000
-50%    16275.500000     37.000000  1.783545e+05  ...      0.000000      0.000000       40.000000
-75%    24418.750000     48.000000  2.369928e+05  ...      0.000000      0.000000       45.000000
-max    32562.000000     90.000000  1.484705e+06  ...  99999.000000   4356.000000       99.000000
+         Unnamed: 0           Age  ...  Capital-loss  Hours-per-week
+count  32538.000000  32538.000000  ...  32538.000000    32538.000000
+mean   16277.918311     38.585561  ...     87.365542       40.440316
+std     9400.059250     13.637774  ...    403.095929       12.346700
+min        1.000000     17.000000  ...      0.000000        1.000000
+25%     8137.250000     28.000000  ...      0.000000       40.000000
+50%    16275.500000     37.000000  ...      0.000000       40.000000
+75%    24418.750000     48.000000  ...      0.000000       45.000000
+max    32562.000000     90.000000  ...   4356.000000       99.000000
 
 [8 rows x 7 columns]
 
