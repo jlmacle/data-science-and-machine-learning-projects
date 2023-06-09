@@ -11,13 +11,13 @@ Dataframe info :
 3,Fnlwgt,32538,non-null,int64
 4,Education,32538,non-null,object
 5,Education-Num,32538,non-null,int64
-6,Marital,status,32538,non-null,object
+6,Marital-status,32538,non-null,object
 7,Occupation,32538,non-null,object
 8,Relationship,32538,non-null,object
 9,Race,32538,non-null,object
 10,Sex,32538,non-null,object
-11,Capital,gain,32538,non-null,int64
-12,Capital,loss,32538,non-null,int64
+11,Capital-gain,32538,non-null,int64
+12,Capital-loss,32538,non-null,int64
 13,Hours-per-week,32538,non-null,int64
 14,Native,country,32538,non-null,object
 15,>50K,,<=50K,32538,non-null,object
@@ -26,7 +26,7 @@ memory,usage:,4.0+,MB
 
 
 
-,Age,Workclass,Fnlwgt,Education,Education-Num,Marital status,Occupation,Relationship,Race,Sex,Capital gain,Capital loss,Hours-per-week,Native country,">50K, <=50K"
+,Age,Workclass,Fnlwgt,Education,Education-Num,Marital-status,Occupation,Relationship,Race,Sex,Capital-gain,Capital-loss,Hours-per-week,Native country,">50K, <=50K"
 
 1,39.0, State-gov,77516, Bachelors,13, Never-married, Adm-clerical, Not-in-family, White, Male,2174,0,40, United-States, <=50K
 
