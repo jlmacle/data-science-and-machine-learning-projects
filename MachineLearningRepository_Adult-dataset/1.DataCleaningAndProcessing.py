@@ -11,7 +11,7 @@ _data_path = _data_path_class()
 data_path = _data_path.get_data_path_object()
 
 # # Removing rows with duplicates and unvavailable data 
-df  = dcp.drop_duplicates_and_remove_rows_with_data_unavailable_from_csv_file(data_path.get_path_to_csv_folder(), data_path.get_file_name_for_csv_with_original_data(),low_memory_setting=False)
+df  = dcp.drop_duplicates_and_remove_rows_with_data_unavailable_from_csv_file(data_path.get_path_to_data_folder(), data_path.get_file_name_for_csv_with_original_data(),low_memory_setting=False)
 
 # # Renaming some column names 
 # # to avoid an issue at "table_data_to_csv" time
@@ -35,7 +35,7 @@ if(results != {}):
     print()
 
 
-df.to_csv(os.path.join(data_path.get_path_to_csv_folder(),"adult-cleaned_data_if_previous_result_was_an_empty_dict.csv"), index=False)
+df.to_csv(os.path.join(data_path.get_path_to_data_folder(),"adult-cleaned_data_if_previous_result_was_an_empty_dict.csv"), index=False)
 
 # Checking the program with the cleaned data
 
