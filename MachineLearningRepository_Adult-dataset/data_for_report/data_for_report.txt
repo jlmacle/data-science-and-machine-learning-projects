@@ -28,92 +28,94 @@ memory usage: 3.7+ MB
 
 
 Head of the cleaned data :
-    Age          Workclass  Fnlwgt  ... Hours-per-week  Native-country >50K__<=50K
-0  39.0          State-gov   77516  ...             40   United-States       <=50K
-1  39.0          State-gov   77516  ...             40   United-States       <=50K
-2  50.0   Self-emp-not-inc   83311  ...             13   United-States       <=50K
-3  38.0            Private  215646  ...             40   United-States       <=50K
-4  53.0            Private  234721  ...             40   United-States       <=50K
+    Age         Workclass  Fnlwgt  ... Hours-per-week  Native-country >50K__<=50K
+0  39.0         State-gov   77516  ...             40   United-States       <=50K
+1  39.0         State-gov   77516  ...             40   United-States       <=50K
+2  50.0  Self-emp-not-inc   83311  ...             13   United-States       <=50K
+3  38.0           Private  215646  ...             40   United-States       <=50K
+4  53.0           Private  234721  ...             40   United-States       <=50K
 
 [5 rows x 15 columns]
 
 Description of the dataframe :
-                Age        Fnlwgt  Education-Num  Capital-gain  Capital-loss  Hours-per-week
-count  32538.000000  3.253800e+04   32538.000000  32538.000000  32538.000000    32538.000000
-mean      38.585561  1.897774e+05      10.081904   1078.477411     87.365542       40.440316
-std       13.637774  1.055567e+05       2.571644   7387.846388    403.095929       12.346700
-min       17.000000  1.228500e+04       1.000000      0.000000      0.000000        1.000000
-25%       28.000000  1.178188e+05       9.000000      0.000000      0.000000       40.000000
-50%       37.000000  1.783545e+05      10.000000      0.000000      0.000000       40.000000
-75%       48.000000  2.369928e+05      12.000000      0.000000      0.000000       45.000000
-max       90.000000  1.484705e+06      16.000000  99999.000000   4356.000000       99.000000
+                Age        Fnlwgt  ...  Capital-loss  Hours-per-week
+count  32538.000000  3.253800e+04  ...  32538.000000    32538.000000
+mean      38.585561  1.897774e+05  ...     87.365542       40.440316
+std       13.637774  1.055567e+05  ...    403.095929       12.346700
+min       17.000000  1.228500e+04  ...      0.000000        1.000000
+25%       28.000000  1.178188e+05  ...      0.000000       40.000000
+50%       37.000000  1.783545e+05  ...      0.000000       40.000000
+75%       48.000000  2.369928e+05  ...      0.000000       45.000000
+max       90.000000  1.484705e+06  ...   4356.000000       99.000000
+
+[8 rows x 6 columns]
 
 View over the most represented native countries
-                  Unique Values  Count
-0                 United-States  29154
-1                        Mexico    639
-2                             ?    582
-3                   Philippines    198
-4                       Germany    137
-5                        Canada    121
-6                   Puerto-Rico    114
-7                   El-Salvador    106
-8                         India    100
-9                          Cuba     95
-10                      England     90
-11                      Jamaica     81
-12                        South     80
-13                        China     75
-14                        Italy     73
-15           Dominican-Republic     70
-16                      Vietnam     67
-17                        Japan     62
-18                    Guatemala     62
-19                       Poland     60
-20                     Columbia     59
-21                       Taiwan     51
-22                        Haiti     44
-23                         Iran     43
-24                     Portugal     37
-25                    Nicaragua     34
-26                         Peru     31
-27                       France     29
-28                       Greece     29
-29                      Ecuador     28
-30                      Ireland     24
-31                         Hong     20
-33              Trinadad&Tobago     19
-32                     Cambodia     19
-34                         Laos     18
-35                     Thailand     18
-36                   Yugoslavia     16
-37   Outlying-US(Guam-USVI-etc)     14
-38                     Honduras     13
-39                      Hungary     13
-40                     Scotland     12
-41           Holand-Netherlands      1
+                 Unique Values  Count
+0                United-States  29154
+1                       Mexico    639
+2                            ?    582
+3                  Philippines    198
+4                      Germany    137
+5                       Canada    121
+6                  Puerto-Rico    114
+7                  El-Salvador    106
+8                        India    100
+9                         Cuba     95
+10                     England     90
+11                     Jamaica     81
+12                       South     80
+13                       China     75
+14                       Italy     73
+15          Dominican-Republic     70
+16                     Vietnam     67
+17                       Japan     62
+18                   Guatemala     62
+19                      Poland     60
+20                    Columbia     59
+21                      Taiwan     51
+22                       Haiti     44
+23                        Iran     43
+24                    Portugal     37
+25                   Nicaragua     34
+26                        Peru     31
+27                      France     29
+28                      Greece     29
+29                     Ecuador     28
+30                     Ireland     24
+31                        Hong     20
+33             Trinadad&Tobago     19
+32                    Cambodia     19
+34                        Laos     18
+35                    Thailand     18
+36                  Yugoslavia     16
+37  Outlying-US(Guam-USVI-etc)     14
+38                    Honduras     13
+39                     Hungary     13
+40                    Scotland     12
+41          Holand-Netherlands      1
 
 View over the most represented workclasses under high school grad
-       Unique Values  Count
-0            Private  10973
-1   Self-emp-not-inc   1172
-2                  ?    960
-3          Local-gov    657
-4       Self-emp-inc    349
-5          State-gov    327
-6        Federal-gov    289
-7        Without-pay     10
-8       Never-worked      5
+      Unique Values  Count
+0           Private  10973
+1  Self-emp-not-inc   1172
+2                 ?    960
+3         Local-gov    657
+4      Self-emp-inc    349
+5         State-gov    327
+6       Federal-gov    289
+7       Without-pay     10
+8      Never-worked      5
 
 View over the most represented workclasses with a master's degree
-       Unique Values  Count
-0            Private    893
-1          Local-gov    342
-2          State-gov    169
-3   Self-emp-not-inc    124
-4       Self-emp-inc     79
-5        Federal-gov     67
-6                  ?     48
+      Unique Values  Count
+0           Private    893
+1         Local-gov    342
+2         State-gov    169
+3  Self-emp-not-inc    124
+4      Self-emp-inc     79
+5       Federal-gov     67
+6                 ?     48
 
 View over the most represented paycheck category for individuals with a master's degree
   Unique Values  Count
@@ -121,40 +123,40 @@ View over the most represented paycheck category for individuals with a master's
 1         <=50K    763
 
 A view on 'Education-Num','Education', '>50K' and '<=50K'
-                             <=50K  >50K
-Education-Num Education                 
-1              Preschool        50     0
-2              1st-4th         160     6
-3              5th-6th         316    16
-4              7th-8th         605    40
-5              9th             487    27
-6              10th            871    62
-7              11th           1115    60
-8              12th            400    33
-9              HS-grad        8820  1674
-10             Some-college   5896  1386
-11             Assoc-voc      1021   361
-12             Assoc-acdm      802   265
-13             Bachelors      3133  2221
-14             Masters         763   959
-15             Prof-school     153   423
-16             Doctorate       107   306
+                            <=50K  >50K
+Education-Num Education                
+1             Preschool        50     0
+2             1st-4th         160     6
+3             5th-6th         316    16
+4             7th-8th         605    40
+5             9th             487    27
+6             10th            871    62
+7             11th           1115    60
+8             12th            400    33
+9             HS-grad        8820  1674
+10            Some-college   5896  1386
+11            Assoc-voc      1021   361
+12            Assoc-acdm      802   265
+13            Bachelors      3133  2221
+14            Masters         763   959
+15            Prof-school     153   423
+16            Doctorate       107   306
 
 A view on 'Occupation', '>50K' and '<=50K'
-                    <=50K  >50K
-Occupation                     
- Exec-managerial     2097  1968
- Prof-specialty      2278  1858
- Sales               2667   983
- Craft-repair        3165   929
- Adm-clerical        3262   507
- Transport-moving    1277   320
- Tech-support         644   283
- Machine-op-inspct   1751   249
- Protective-serv      438   211
- ?                   1652   191
- Other-service       3154   137
- Farming-fishing      877   115
- Handlers-cleaners   1283    86
- Armed-Forces           8     1
- Priv-house-serv      146     1
+                   <=50K  >50K
+Occupation                    
+Exec-managerial     2097  1968
+Prof-specialty      2278  1858
+Sales               2667   983
+Craft-repair        3165   929
+Adm-clerical        3262   507
+Transport-moving    1277   320
+Tech-support         644   283
+Machine-op-inspct   1751   249
+Protective-serv      438   211
+?                   1652   191
+Other-service       3154   137
+Farming-fishing      877   115
+Handlers-cleaners   1283    86
+Armed-Forces           8     1
+Priv-house-serv      146     1
