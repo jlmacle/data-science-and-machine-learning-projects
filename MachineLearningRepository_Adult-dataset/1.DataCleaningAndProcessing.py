@@ -32,6 +32,7 @@ print(results)
 if(results != {}):
     print()
     lines = dcp.line_finding_given_labels_and_column(df,"Education", ["Bachelors2", "Masters2","Some-college2"])
+    print(lines)
     print()
     print("""** Todo: copy and pasting of adult-Automatically_cleaned-Potential_need_to_add_a_manual_cleaning.csv, 
     line cleaning if neccessary, 
