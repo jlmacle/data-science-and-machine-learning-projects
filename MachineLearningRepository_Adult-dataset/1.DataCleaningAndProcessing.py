@@ -11,7 +11,7 @@ _data_path = _data_path_class()
 data_path = _data_path.get_data_path_object()
 
 # # Removing rows with duplicates and unvavailable data 
-df  = dcp.drop_duplicates_and_remove_rows_with_data_unavailable_from_csv_file(data_path.get_path_to_data_folder(), data_path.get_file_name_for_csv_with_original_data(),low_memory_setting=False)
+df  = dcp.drop_duplicates_and_remove_rows_with_empty_data_from_csv_file(data_path.get_path_to_data_folder(), data_path.get_file_name_for_csv_with_original_data(),low_memory_setting=False)
 
 # # Headers processing
 print()
@@ -19,7 +19,7 @@ df = dcp.header_processing(df, separator_to_replace_space="-")
 df = df.rename(columns={">50K,-<=50K":">50K__<=50K"})
 
 # # Cells processing
-df = dcp.cells_processing(df, separator_to_replace_space="_")
+df = dcp.cells_processing_basic(df, separator_to_replace_space="_")
 df.to_csv(os.path.join(data_path.get_path_to_data_folder(),"adult-Automatically_cleaned-Potential_need_to_add_a_manual_cleaning.csv"), index=False)
 
 # # Pre-cleaning before using a pivot table
