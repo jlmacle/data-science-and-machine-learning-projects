@@ -27,7 +27,8 @@ original_and_filtered_data_file_name = data_path.get_file_name_for_csv_with_orig
 
 # # Row removals
 df = dcp.remove_rows_with_commas_only(path_to_csv_folder, original_and_filtered_data_file_name, 9, low_memory_setting=False)
-#  Keeping with empty data, as this is not an issue for the analysis
+df = dcp.removes_rows_with_empty_data_from_column(df, "WAGE_RATE_OF_PAY_TO")
+#  Keeping some of the rows with empty data, as this is not an issue for the analysis
 #  Actually removing the rows with empty data would prevent the analysis of the data
 
 # # Headers processing
@@ -35,8 +36,16 @@ print()
 df = dcp.header_processing(df, separator_to_replace_space="-")
 
 # # Cells processing
-df = dcp.cells_processing(df, separator_to_replace_space="_")
-df.to_csv(os.path.join(data_path.get_path_to_data_folder(),"cleaned_data.csv"), index=False)
+df = dcp.cells_processing_basic(df, separator_to_replace_space="_")
+df = dcp.cells_processing_to_uppercase_in_column(df, "JOB_TITLE")
+    # Converting amount in $ to float
+df = dcp.from_dollar_strings_to_floats(df, "WAGE_RATE_OF_PAY_TO")
+
+print(df.head(20))
+path_to_cleaned_data = os.path.join(data_path.get_path_to_data_folder(),"cleaned_data.csv")
+print("Saving the cleaned data to: ", path_to_cleaned_data)
+df.to_csv(path_to_cleaned_data, index=False)
+
 
 
 
