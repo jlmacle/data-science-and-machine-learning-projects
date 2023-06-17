@@ -30,6 +30,7 @@ if os.path.exists(path_to_txt_file):
 # Report data creation
 path_to_cleaned_data = data_path.get_path_to_cleaned_csv_file()
 df = dcp.import_csv_to_df(path_to_cleaned_data,low_memory_setting=False)
+
     # Unique count of values for "SOC_TITLE" column, listing the job titles
 job_types_data = dv.count_unique_values(df, "JOB_TITLE", is_order_ascending=False)
     # To txt
@@ -39,6 +40,20 @@ dv.print_to_txt_file(job_types_data)
 dv.print_to_csv_file(",Unique Values,Count")
 # 1 row to ignore
 dv.print_to_csv_file(dv.table_data_to_csv(job_types_data, 1))
+
+    # Evaluation of the average yearly salary per job title
+        # Converting the "PW_UNIT_OF_PAY" column values to uppercase
+dcp.cells_processing_to_uppercase_in_column(df, "PW_UNIT_OF_PAY")
+        # Boolean mask to select only data with the yearly value in the column "PW_UNIT_OF_PAY"
+mask_yearly = df["PW_UNIT_OF_PAY"] == "YEAR"
+        # Filtering the dataframe with the mask
+df_yearly = df[mask_yearly]
+        # Grouping the data by job title and calculating the average yearly salary
+job_title_groups = df_yearly.groupby("JOB_TITLE")
+average_salary_per_job_title = job_title_groups["WAGE_RATE_OF_PAY_TO"].mean().astype(int)
+    # Printing the average yearly salary per job title
+print(average_salary_per_job_title)
+
 
 # Issues encountered:
 # DtypeWarning: Columns (76,89) have mixed types. Specify dtype option on import or set low_memory=False.
