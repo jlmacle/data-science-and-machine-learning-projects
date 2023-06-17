@@ -42,7 +42,7 @@ df = dcp.cells_processing_to_uppercase_in_column(df, "JOB_TITLE")
 df = dcp.from_dollar_strings_to_floats(df, "WAGE_RATE_OF_PAY_TO")
 
 print(df.head(20))
-path_to_cleaned_data = os.path.join(data_path.get_path_to_data_folder(),"cleaned_data.csv")
+path_to_cleaned_data = os.path.join(data_path.get_path_to_data_folder(),data_path.get_file_name_for_csv_with_cleaned_data())
 print("Saving the cleaned data to: ", path_to_cleaned_data)
 df.to_csv(path_to_cleaned_data, index=False)
 
