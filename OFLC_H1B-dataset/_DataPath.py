@@ -7,8 +7,7 @@ class _DataPath:
 
         self.data_path.set_path_to_data_folder(os.path.join(os.getcwd(),"OFLC_H1B-dataset","data"))
         self.data_path.set_file_name_for_csv_with_original_data("Data_Restricted_to_computer_related_fields.csv")
-        # self.data_path.set_file_name_for_csv_with_cleaned_data("Data_Restricted_to_computer_related_fields-rows_with_commas_only_removed.csv")
-        self.data_path.set_file_name_for_csv_with_cleaned_data("Data_Restricted_to_computer_related_fields-rows_with_commas_only_removed-Job_titles_concatenated.csv")
+        self.data_path.set_file_name_for_csv_with_cleaned_data("cleaned_data.csv")
                     
         self.data_path.set_path_to_folder_with_data_for_reporting(os.path.join(os.getcwd(),"OFLC_H1B-dataset","data_for_report"))       
         self.data_path.set_file_name_for_csv_file_with_data_for_reporting("data_for_report.csv")
