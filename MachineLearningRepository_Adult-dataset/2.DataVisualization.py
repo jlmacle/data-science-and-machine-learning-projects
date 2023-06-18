@@ -12,8 +12,8 @@ dv = dv_class()
 
 # Setting the folder path and csv/txt files names
 dv.set_report_folder_path(data_path.get_path_to_folder_with_data_for_reporting())
-dv.set_csv_report_file_name(data_path.get_file_name_for_csv_file_with_data_for_reporting())
-dv.set_txt_report_file_name(data_path.get_file_name_for_txt_file_with_data_for_reporting())
+dv.set_file_name_for_file_with_reporting_data_in_csv_format(data_path.get_file_name_for_csv_file_with_data_for_reporting())
+dv.set_file_name_for_file_with_reporting_data_in_txt_format(data_path.get_file_name_for_txt_file_with_data_for_reporting())
 dv.set_path_to_cleaned_data(data_path.get_path_to_cleaned_csv_file())
 
 # Deleting the files if existing
