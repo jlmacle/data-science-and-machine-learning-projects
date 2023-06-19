@@ -1,6 +1,7 @@
 from ds_ml_utils.data_cleaning_and_processing import DataCleaningAndProcessing as dcp_class
 from ds_ml_utils.data_visualization import DataVisualization as dv_class
 from _DataPath import _DataPath as _data_path_class
+import pandas as pd
 import os
 
 # Planning a data exploration based on unsupervised learning and visualization
@@ -30,6 +31,11 @@ if os.path.exists(path_to_txt_file):
 # Report data creation
 path_to_cleaned_data = data_path.get_path_to_cleaned_csv_file()
 df = dcp.import_csv_to_df(path_to_cleaned_data,low_memory_setting=False)
+pd.set_option('display.max_rows', None)
+
+    # Common to all reports
+dv.simple_stats(df)
+dv.print_to_txt_file("")
 
     # Unique count of values for "SOC_TITLE" column, listing the job titles
 job_types_data = dv.count_unique_values(df, "JOB_TITLE", is_order_ascending=False)
