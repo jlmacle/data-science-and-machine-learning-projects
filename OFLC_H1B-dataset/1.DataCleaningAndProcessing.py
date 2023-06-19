@@ -26,10 +26,10 @@ original_and_filtered_data_file_name = data_path.get_file_name_for_csv_with_orig
     # --> Fixed by converting the file to utf-8 in reading and writing in the method remove_rows_with_commas_only()
 
 # # Row removals
-df = dcp.remove_rows_with_commas_only(path_to_csv_folder, original_and_filtered_data_file_name, 9, low_memory_setting=False)
+df = dcp.drop_duplicates_and_remove_rows_with_only_empty_data_from_df(path_to_csv_folder, original_and_filtered_data_file_name, low_memory_setting=False)
 df = dcp.removes_rows_with_empty_data_from_column(df, "WAGE_RATE_OF_PAY_TO")
 #  Keeping some of the rows with empty data, as this is not an issue for the analysis
-#  Actually removing the rows with empty data would prevent the analysis of the data
+#  Actually, removing the rows with empty data would prevent the analysis of the data
 
 # # Headers processing
 print()
@@ -42,6 +42,13 @@ df = dcp.cells_processing_to_uppercase_in_column(df, "JOB_TITLE")
 df = dcp.from_dollar_strings_to_floats(df, "WAGE_RATE_OF_PAY_TO")
 
 print(df.head(20))
+
+
+# # Storing words related to the job titles in a trie
+# trie = dcp.get_trie_with_words_from_column(df, "JOB_TITLE")
+# trie.print_alphabetical()
+
+
 path_to_cleaned_data = os.path.join(data_path.get_path_to_data_folder(),data_path.get_file_name_for_csv_with_cleaned_data())
 print("Saving the cleaned data to: ", path_to_cleaned_data)
 df.to_csv(path_to_cleaned_data, index=False)
