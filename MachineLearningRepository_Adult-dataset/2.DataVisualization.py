@@ -41,10 +41,10 @@ dv.simple_stats(df)
 native_country_data = dv.count_unique_values(df, "Native-country", False)
    # To txt
 dv.print_to_txt_file("")
-dv.print_to_txt_file("View over the most represented native countries")
+dv.print_to_txt_file("A view over the most represented native countries")
 dv.print_to_txt_file(native_country_data)
    # To csv
-dv.print_to_csv_file("View over the most represented native countries")
+dv.print_to_csv_file("A view over the most represented native countries")
 dv.print_to_csv_file(dv.get_unique_count_values_csv_row())
 # 1 row to ignore
 dv.print_to_csv_file(dv.table_data_to_csv(native_country_data, 1))
@@ -54,10 +54,10 @@ df_less_than_high_school_grad = df[df["Education-Num"] <= 9]
 occupation_data_for_less_than_high_school_grad = dv.count_unique_values(df_less_than_high_school_grad, "Workclass", False)
    # To txt
 dv.print_to_txt_file("")
-dv.print_to_txt_file("View over the most represented workclasses under high school grad")
+dv.print_to_txt_file("A view over the most represented workclasses under high school grad")
 dv.print_to_txt_file(occupation_data_for_less_than_high_school_grad)
    # To csv
-dv.print_to_csv_file("View over the most represented workclasses under high school grad")
+dv.print_to_csv_file("A view over the most represented workclasses under high school grad")
 dv.print_to_csv_file(dv.get_unique_count_values_csv_row())
 # 1 row to ignore
 dv.print_to_csv_file(dv.table_data_to_csv(occupation_data_for_less_than_high_school_grad, 1))
@@ -67,10 +67,10 @@ df_master_s_degree = df[df["Education-Num"] == 14]
 occupation_data_for_master_s_degree = dv.count_unique_values(df_master_s_degree, "Workclass", False)
    # To txt
 dv.print_to_txt_file("")
-dv.print_to_txt_file("View over the most represented workclasses with a master's degree")
+dv.print_to_txt_file("A view over the most represented workclasses with a master's degree")
 dv.print_to_txt_file(occupation_data_for_master_s_degree)
    # To csv
-dv.print_to_csv_file("View over the most represented workclasses with a master's degree")
+dv.print_to_csv_file("A view over the most represented workclasses with a master's degree")
 dv.print_to_csv_file(",Unique Values,Count")
 # 1 row to ignore
 dv.print_to_csv_file(dv.table_data_to_csv(occupation_data_for_master_s_degree, 1))
@@ -79,10 +79,10 @@ dv.print_to_csv_file(dv.table_data_to_csv(occupation_data_for_master_s_degree, 1
 income_data_for_master_s_degree = dv.count_unique_values(df_master_s_degree, ">50K__<=50K", False)
    # To txt
 dv.print_to_txt_file("")
-dv.print_to_txt_file("View over the most represented paycheck category for individuals with a master's degree")
+dv.print_to_txt_file("A view over the most represented paycheck category for individuals with a master's degree")
 dv.print_to_txt_file(income_data_for_master_s_degree)
    # To csv
-dv.print_to_csv_file("View over the most represented paycheck category for individuals with a master's degree")
+dv.print_to_csv_file("A view over the most represented paycheck category for individuals with a master's degree")
 dv.print_to_csv_file(",Unique Values,Count")
 # 1 row to ignore
 dv.print_to_csv_file(dv.table_data_to_csv(income_data_for_master_s_degree, 1))
