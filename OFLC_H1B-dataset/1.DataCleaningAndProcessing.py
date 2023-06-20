@@ -45,8 +45,9 @@ print(df.head(20))
 
 
 # # Storing words related to the job titles in a trie
-# trie = dcp.get_trie_with_words_from_column(df, "JOB_TITLE")
-# trie.print_alphabetical()
+trie = dcp.get_trie_with_words_from_column(df, "JOB_TITLE")
+trie.print_alphabetical()
+print("Number of words in the trie: ", trie.get_nbr_of_words())
 
 
 path_to_cleaned_data = os.path.join(data_path.get_path_to_data_folder(),data_path.get_file_name_for_csv_with_cleaned_data())
