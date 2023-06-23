@@ -56,7 +56,7 @@ print(f"--> Storing words related to the job titles, and splitted with '_', in {
 # dv.print_to_specified_txt_file("Initial nbr of words in trie : "+str(nbr_of_words_in_trie),os.path.join(data_path.get_path_to_folder_with_data_for_reporting(),file_name_with_data_about_trie), 'w')
 path_to_file_with_data_about_trie = os.path.join(data_path.get_path_to_folder_with_data_for_reporting(),file_name_with_data_about_trie)
 pattern = r"\(\d+\.\d+\)"
-list = dcp.locate_pattern(df, pattern)
+list = dcp.locate_pattern(df, "JOB_TITLE", pattern)
 print("List: ", list)
 
 path_to_cleaned_data = os.path.join(data_path.get_path_to_data_folder(),data_path.get_file_name_for_csv_with_cleaned_data())
