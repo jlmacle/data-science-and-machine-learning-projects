@@ -3,7 +3,6 @@ from ds_ml_utils.data_visualization import DataVisualization as dv_class
 from _DataPath import _DataPath as _data_path_class
 import os
 
-# Cleaning the data before processing
 dcp = dcp_class()
 dv = dv_class()
 _data_path = _data_path_class()
@@ -43,15 +42,22 @@ df = dcp.cells_processing_to_uppercase_in_column(df, "JOB_TITLE")
 df = dcp.from_dollar_strings_to_floats(df, "WAGE_RATE_OF_PAY_TO")
 
 # # Storing words related to the job titles in a trie
-trie = dcp.get_trie_with_words_from_column(df, "JOB_TITLE")
+trie = dcp.get_trie_with_words_from_column(df, "JOB_TITLE",'_')
 data = trie.print_alphabetical_to_string()
 file_name = "words_in_trie.txt"
+file_name_with_data_about_trie = "data about trie.txt"
+nbr_of_words_in_trie = trie.get_nbr_of_words()
 path_to_words_in_trie = os.path.join(data_path.get_path_to_folder_with_data_for_reporting(),file_name)
 dv.print_to_specified_txt_file(data,path_to_words_in_trie, 'w')
 short_path = path_to_words_in_trie.split(projects_folder)[1]
 print(f"--> Storing words related to the job titles, and splitted with '_', in {short_path}")
-print("-----> Number of words in the trie: ", trie.get_nbr_of_words())
-
+# print("-----> Number of words in the trie: ", nbr_of_words_in_trie)
+# To understand: the inconsistency between the number of words in the trie and the number of words in the file
+# dv.print_to_specified_txt_file("Initial nbr of words in trie : "+str(nbr_of_words_in_trie),os.path.join(data_path.get_path_to_folder_with_data_for_reporting(),file_name_with_data_about_trie), 'w')
+path_to_file_with_data_about_trie = os.path.join(data_path.get_path_to_folder_with_data_for_reporting(),file_name_with_data_about_trie)
+pattern = r"\(\d+\.\d+\)"
+list = dcp.locate_pattern(df, pattern)
+print("List: ", list)
 
 path_to_cleaned_data = os.path.join(data_path.get_path_to_data_folder(),data_path.get_file_name_for_csv_with_cleaned_data())
 print("Saving the cleaned data to: ", path_to_cleaned_data)
