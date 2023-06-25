@@ -41,6 +41,18 @@ df = dcp.cells_processing_to_uppercase_in_column(df, "JOB_TITLE")
     # Converting amount in $ to float
 df = dcp.from_dollar_strings_to_floats(df, "WAGE_RATE_OF_PAY_TO")
 
+# Pattern removal
+print("--> Removing patterns of data in the JOB_TITLE column")
+   # Removing patterns similar to _(017040.000997) 
+pattern = r"_\(\d+\.\d+\)"
+df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
+   # Removing patterns similar to _(017040000997)
+pattern = r"_\(\d+\)"
+df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
+    # Removing patterns similar to _(017040.000997.000997)
+pattern = r"_\(\d+\.\d+\.\d+\)"
+df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
+
 # # Storing words related to the job titles in a trie
 trie = dcp.get_trie_with_words_from_column(df, "JOB_TITLE",'_')
 data = trie.print_alphabetical_to_string()
@@ -55,9 +67,6 @@ print(f"--> Storing words related to the job titles, and splitted with '_', in {
 # To understand: the inconsistency between the number of words in the trie and the number of words in the file
 # dv.print_to_specified_txt_file("Initial nbr of words in trie : "+str(nbr_of_words_in_trie),os.path.join(data_path.get_path_to_folder_with_data_for_reporting(),file_name_with_data_about_trie), 'w')
 path_to_file_with_data_about_trie = os.path.join(data_path.get_path_to_folder_with_data_for_reporting(),file_name_with_data_about_trie)
-pattern = r"\(\d+\.\d+\)"
-list = dcp.locate_pattern(df, "JOB_TITLE", pattern)
-print("List: ", list)
 
 path_to_cleaned_data = os.path.join(data_path.get_path_to_data_folder(),data_path.get_file_name_for_csv_with_cleaned_data())
 print("Saving the cleaned data to: ", path_to_cleaned_data)
