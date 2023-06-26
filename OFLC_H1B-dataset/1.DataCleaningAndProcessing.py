@@ -52,6 +52,14 @@ df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
     # Removing patterns similar to _(017040.000997.000997)
 pattern = r"_\(\d+\.\d+\.\d+\)"
 df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
+    # Removing patterns similar to _[00040133]
+pattern = r"\_\[\d+\]"
+df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
+    # Removing patterns similar to _017040.001775
+pattern = r"\_\d+\.\d+"
+df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
+
+
 
 # # Storing words related to the job titles in a trie
 trie = dcp.get_trie_with_words_from_column(df, "JOB_TITLE",'_')
@@ -62,14 +70,14 @@ nbr_of_words_in_trie = trie.get_nbr_of_words()
 path_to_words_in_trie = os.path.join(data_path.get_path_to_folder_with_data_for_reporting(),file_name)
 dv.print_to_specified_txt_file(data,path_to_words_in_trie, 'w')
 short_path = path_to_words_in_trie.split(projects_folder)[1]
-print(f"--> Storing words related to the job titles, and splitted with '_', in {short_path}")
+print(f"--> Storing words related to the job titles ( pattern removed ), and splitted with '_', in {short_path}")
 # print("-----> Number of words in the trie: ", nbr_of_words_in_trie)
 # To understand: the inconsistency between the number of words in the trie and the number of words in the file
 # dv.print_to_specified_txt_file("Initial nbr of words in trie : "+str(nbr_of_words_in_trie),os.path.join(data_path.get_path_to_folder_with_data_for_reporting(),file_name_with_data_about_trie), 'w')
 path_to_file_with_data_about_trie = os.path.join(data_path.get_path_to_folder_with_data_for_reporting(),file_name_with_data_about_trie)
 
 path_to_cleaned_data = os.path.join(data_path.get_path_to_data_folder(),data_path.get_file_name_for_csv_with_cleaned_data())
-print("Saving the cleaned data to: ", path_to_cleaned_data)
+print("--> Saving the cleaned data to: ", path_to_cleaned_data)
 df.to_csv(path_to_cleaned_data, index=False)
 
 
