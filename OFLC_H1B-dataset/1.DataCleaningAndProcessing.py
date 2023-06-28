@@ -60,6 +60,12 @@ pattern = r"\_\d+\.\d+"
 df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
 
 
+# Unfinished work in progress
+# # Pattern location : non-word characters
+pattern = r"\W"
+# pattern = r"\(\w+\)"
+line_numbers = dcp.locate_pattern_in_column(df, "JOB_TITLE", pattern)
+
 
 # # Storing words related to the job titles in a trie
 trie = dcp.get_trie_with_words_from_column(df, "JOB_TITLE",'_')
