@@ -46,26 +46,41 @@ print("--> Removing patterns of data in the JOB_TITLE column")
    # Removing patterns similar to _(017040.000997) 
 pattern = r"_\(\d+\.\d+\)"
 df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
-   # Removing patterns similar to _(017040000997)
+#    # Removing patterns similar to _(017040000997)
 pattern = r"_\(\d+\)"
 df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
-    # Removing patterns similar to _(017040.000997.000997)
+
+#     # Removing patterns similar to _(017040.000997.000997)
 pattern = r"_\(\d+\.\d+\.\d+\)"
 df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
-    # Removing patterns similar to _[00040133]
+
+#     # Removing patterns similar to _[00040133]
 pattern = r"\_\[\d+\]"
 df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
-    # Removing patterns similar to _017040.001775
-pattern = r"\_\d+\.\d+"
+# reviewed until this point
+
+    # Removing patterns similar to (_20637.580)
+pattern = r"\(\_\d+\.\d+\)"
 df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
 
+# Removing patterns similar to _017040.001775
+# pattern = r"\_\d+\.\d+"
+# dcp.locate_pattern_in_column(df, "JOB_TITLE", pattern)
+# df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
+
+# Minding to keep these patterns untouched:
+# MANAGER_2_SOFTWARE_DEVELOPMENT_AND_ENGINEERING
+# ENGINEER_4_PRODUCT_DEVELOPMENT_AND_ENGINEERING
 
 # Unfinished work in progress
 # # Pattern location : non-word characters
-pattern = r"\W"
-# pattern = r"\(\w+\)"
-line_numbers = dcp.locate_pattern_in_column(df, "JOB_TITLE", pattern)
+# pattern = r"\_\d+"
+# line_numbers = dcp.locate_pattern_in_column(df, "JOB_TITLE", pattern)
 
+# To process later:
+# SR. SOFT. _-_  _/_ _&_  ACHITECT
+
+# To add at the end: a trimming of '_'
 
 # # Storing words related to the job titles in a trie
 trie = dcp.get_trie_with_words_from_column(df, "JOB_TITLE",'_')
