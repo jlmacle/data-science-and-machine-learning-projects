@@ -63,7 +63,7 @@ df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
 pattern = r"\(\_\d+\.\d+\)"
 df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
 
-#     # Removing patterns similar to _017040.001775
+# Removing patterns similar to _017040.001775
 # pattern = r"\_\d+\.\d+"
 # dcp.locate_pattern_in_column(df, "JOB_TITLE", pattern)
 # df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
