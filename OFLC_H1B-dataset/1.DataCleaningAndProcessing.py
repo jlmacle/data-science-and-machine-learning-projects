@@ -59,27 +59,35 @@ df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
 pattern = r"\(\_\d+\.\d+\)"
 df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
 
-    # Removing patterns similar to _[00040133]
-pattern = r"\_\[\d+\]"
-df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
-
-# Removing patterns similar to _20637.235.7
+    # Removing patterns similar to _20637.235.7
 pattern = r"\_\d+\.\d+\.\d+"
 df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
 
-
-
-# Removing patterns similar to _017040.001775
+    # Removing patterns similar to _017040.001775
 pattern = r"\_\d+\.\d+"
 df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
 
-# reviewed until this point
-# pattern = r"\_\d+"
-# line_numbers = dcp.locate_pattern_in_column(df, "JOB_TITLE", pattern)
+    # Removing patterns similar to _[00040133]
+pattern = r"\_\[\d+\]"
+df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
+    
+    # Changing TIER_2 to TIER2
+pattern = r"TIER\_2"
+replacement = "TIER2"
+df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
 
-# Minding to keep these patterns untouched:
-# MANAGER_2_SOFTWARE_DEVELOPMENT_AND_ENGINEERING
-# ENGINEER_4_PRODUCT_DEVELOPMENT_AND_ENGINEERING
+    # TODO
+    # Changing DAT_3.X to DAT3.X
+
+# reviewed until this point
+    # Removing patterns similar to APPLICATION_DEVELOPMENT_AND_SWIFT_INTEGRATION_LEAD_00045446
+    # Minding to keep these patterns untouched:
+    # MANAGER_2_SOFTWARE_DEVELOPMENT_AND_ENGINEERING
+    # ENGINEER_4_PRODUCT_DEVELOPMENT_AND_ENGINEERING
+pattern = r"\_\d+(?!_)"
+dcp.locate_pattern_in_column(df, "JOB_TITLE", pattern)
+
+
 
 # Unfinished work in progress
 # # Pattern location : non-word characters
