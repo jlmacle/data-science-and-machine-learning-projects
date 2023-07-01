@@ -1,5 +1,6 @@
 OFLC_H1B-dataset/data_source/
 OFLC_H1B-dataset/data/*.csv
+OFLC_H1B-dataset/data/0.Data_Restricted_to_computer_related_positions.zip
 MachineLearningRepository_Adult-dataset/data/adult.xlsx
 MachineLearningRepository_Adult-dataset/__pycache__
 OFLC_H1B-dataset\__pycache__
