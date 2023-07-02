@@ -18,6 +18,10 @@ projects_folder = "data-science-and-machine-learning-projects"
 path_to_csv_folder = data_path.get_path_to_data_folder()
 original_and_filtered_data_file_name = data_path.get_file_name_for_csv_with_original_data()
 
+line_numbers_before_cleaning = 0
+line_numbers_after_cleaning = 0
+data_removed = []
+
 # # Data encoding fixing 
     # Issue encountered when running the remove_rows_with_commas_only() method:
     # File "C:\Python311\Lib\encodings\cp1252.py", line 23, in decode
@@ -30,6 +34,8 @@ df = dcp.drop_duplicates_and_remove_rows_with_only_empty_data_from_df(path_to_cs
 df = dcp.removes_rows_with_empty_data_from_column(df, "WAGE_RATE_OF_PAY_TO")
 #  Keeping some of the rows with empty data, as this is not an issue for the analysis
 #  Actually, removing the rows with empty data would prevent the analysis of the data
+line_numbers_before_cleaning = df.shape[0]
+
 
 # # Headers processing
 print()
@@ -45,46 +51,64 @@ df = dcp.from_dollar_strings_to_floats(df, "WAGE_RATE_OF_PAY_TO")
 print("--> Removing patterns of data in the JOB_TITLE column")
     # Removing patterns similar to _(017040.000997.000997)
 pattern = r"_\(\d+\.\d+\.\d+\)"
-df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
+df = dcp.remove_pattern_in_column(df, "JOB_TITLE", pattern)
 
    # Removing patterns similar to _(017040.000997) 
 pattern = r"_\(\d+\.\d+\)"
-df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
+df = dcp.remove_pattern_in_column(df, "JOB_TITLE", pattern)
 
    # Removing patterns similar to _(017040000997)
 pattern = r"_\(\d+\)"
-df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
+df = dcp.remove_pattern_in_column(df, "JOB_TITLE", pattern)
 
     # Removing patterns similar to (_20637.580)
 pattern = r"\(\_\d+\.\d+\)"
-df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
+df = dcp.remove_pattern_in_column(df, "JOB_TITLE", pattern)
 
     # Removing patterns similar to _20637.235.7
 pattern = r"\_\d+\.\d+\.\d+"
-df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
+df = dcp.remove_pattern_in_column(df, "JOB_TITLE", pattern)
 
     # Removing patterns similar to _017040.001775
 pattern = r"\_\d+\.\d+"
-df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
+df = dcp.remove_pattern_in_column(df, "JOB_TITLE", pattern)
 
     # Removing patterns similar to _[00040133]
 pattern = r"\_\[\d+\]"
-df = dcp.remove_pattern_from_column(df, "JOB_TITLE", pattern)
-    
-    # Changing TIER_2 to TIER2
-pattern = r"TIER\_2"
-replacement = "TIER2"
+df = dcp.remove_pattern_in_column(df, "JOB_TITLE", pattern)
+ 
+    # Changing TIER_2 to TIER2 in preparation for the next pattern removal
+    # ChatGPT 23/07
+    # In the code above, 
+    # we use the regular expression pattern r'TIER_(\d)' to match "TIER_" 
+    # followed by a digit. 
+    # The parentheses (\d) create a capturing group 
+    # to capture the digit for use in the replacement.
+    # The replacement pattern r'TIER\1' uses \1 
+    # to refer to the captured digit from the pattern. 
+    # This allows us to replace "TIER_" and the following digit 
+    # with "TIER" followed by the same digit.
+pattern = r'TIER_(\d)'
+replacement = r'TIER\1'
 df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
 
-    # TODO
+    # Removing patterns similar to _4
+pattern = r"\_\d+$"
+dcp.remove_pattern_in_column(df, "JOB_TITLE", pattern)
+
     # Changing DAT_3.X to DAT3.X
+pattern = r"DAT\_3\.X"
+replacement = "DAT3.X"
+df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
+
 
 # reviewed until this point
     # Removing patterns similar to APPLICATION_DEVELOPMENT_AND_SWIFT_INTEGRATION_LEAD_00045446
     # Minding to keep these patterns untouched:
     # MANAGER_2_SOFTWARE_DEVELOPMENT_AND_ENGINEERING
     # ENGINEER_4_PRODUCT_DEVELOPMENT_AND_ENGINEERING
-pattern = r"\_\d+(?!_)"
+    # SENIOR_5G_RAN_SYSTEMS_ENGINEER
+pattern = r"\_\d+"
 dcp.locate_pattern_in_column(df, "JOB_TITLE", pattern)
 
 
@@ -116,6 +140,12 @@ path_to_file_with_data_about_trie = os.path.join(data_path.get_path_to_folder_wi
 path_to_cleaned_data = os.path.join(data_path.get_path_to_data_folder(),data_path.get_file_name_for_csv_with_cleaned_data())
 print("--> Saving the cleaned data to: ", path_to_cleaned_data)
 df.to_csv(path_to_cleaned_data, index=False)
+
+line_numbers_after_cleaning = df.shape[0]
+print(f'''--> About the cleaning:
+      \t Number of rows before cleaning:  {line_numbers_before_cleaning}
+      \t Number of rows after cleaning:   {line_numbers_after_cleaning}
+      \t Data removed: {data_removed}''')
 
 
 
