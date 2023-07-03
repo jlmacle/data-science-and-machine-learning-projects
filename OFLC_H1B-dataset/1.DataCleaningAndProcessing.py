@@ -22,6 +22,7 @@ line_numbers_before_cleaning = 0
 line_numbers_after_cleaning = 0
 data_removed = []
 
+
 # # Data encoding fixing 
     # Issue encountered when running the remove_rows_with_commas_only() method:
     # File "C:\Python311\Lib\encodings\cp1252.py", line 23, in decode
@@ -96,6 +97,28 @@ df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
 pattern = r"\_\d+$"
 dcp.remove_pattern_in_column(df, "JOB_TITLE", pattern)
 
+    # Replacing ENGINEER_(digit) with ENGINEER_
+    # ENGINEER_4_PRODUCT_DEVELOPMENT_ENGINEERING
+    # ENGINEER_4_NETWORK_ENGINEERING
+pattern = r"ENGINEER_\d_"
+replacement = "ENGINEER_"
+df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
+
+    # Replacing MANAGER_(digit) with MANAGER_
+    # MANAGER_1_SOFTWARE_DEVELOPMENT_&_ENGINEERING
+    # MANAGER_1_ENTERPRISE_DATA_ENGINEERING
+pattern = r"MANAGER_\d_"
+replacement = "MANAGER_"
+df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
+
+    # Replacing ARCHITECT_(digit) with ARCHITECT_
+    # ARCHITECT_5_SOFTWARE_ARCHITECTURE 
+    # ARCHITECT_4_SOFTWARE_DEVELOPMENT_&_ENGINEERING 
+pattern = r"ARCHITECT_\d_"
+replacement = "ARCHITECT_"
+df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
+
+
     # Changing DAT_3.X to DAT3.X
 pattern = r"DAT\_3\.X"
 replacement = "DAT3.X"
@@ -108,6 +131,8 @@ df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
     # MANAGER_2_SOFTWARE_DEVELOPMENT_AND_ENGINEERING
     # ENGINEER_4_PRODUCT_DEVELOPMENT_AND_ENGINEERING
     # SENIOR_5G_RAN_SYSTEMS_ENGINEER
+    # SOFTWARE_DEVELOPMENT_&_ENGINEERING
+    # SENIOR_ANALYST_PAYROLL_APPLICATIONS_(LEVEL_3)
 pattern = r"\_\d+"
 dcp.locate_pattern_in_column(df, "JOB_TITLE", pattern)
 
@@ -118,7 +143,10 @@ dcp.locate_pattern_in_column(df, "JOB_TITLE", pattern)
 
 
 # To process later:
-# SR. SOFT.   _-_   _-    _/_   _&_  ACHITECT
+# SOFTWARE_ENGINEER_[5103_SOFTWARE_DEVELOPMENT_ENGINEER_3]
+# _OFFICE_365
+# SR. SR SENIOR
+# SOFT.   _-_   _-    _/_   ACHITECT
 
 # To add at the end: a trimming of '_'
 
