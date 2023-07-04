@@ -98,6 +98,7 @@ pattern = r"\_\d+$"
 dcp.remove_pattern_in_column(df, "JOB_TITLE", pattern)
 
     # Replacing ENGINEER_(digit) with ENGINEER_
+    # Found in data :
     # ENGINEER_4_PRODUCT_DEVELOPMENT_ENGINEERING
     # ENGINEER_4_NETWORK_ENGINEERING
 pattern = r"ENGINEER_\d_"
@@ -105,6 +106,7 @@ replacement = "ENGINEER_"
 df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
 
     # Replacing MANAGER_(digit) with MANAGER_
+    # Found in data :
     # MANAGER_1_SOFTWARE_DEVELOPMENT_&_ENGINEERING
     # MANAGER_1_ENTERPRISE_DATA_ENGINEERING
 pattern = r"MANAGER_\d_"
@@ -112,10 +114,19 @@ replacement = "MANAGER_"
 df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
 
     # Replacing ARCHITECT_(digit) with ARCHITECT_
+    # Found in data :
     # ARCHITECT_5_SOFTWARE_ARCHITECTURE 
     # ARCHITECT_4_SOFTWARE_DEVELOPMENT_&_ENGINEERING 
 pattern = r"ARCHITECT_\d_"
 replacement = "ARCHITECT_"
+df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
+
+    # Replacing PROFESSIONAL_(digit) with PROFESSIONAL_
+    # Found in data :
+    # PROFESSIONAL_5_INFORMATION_TECHNOLOGY
+    # PROFESSIONAL_4_INFORMATION_TECHNOLOGY
+pattern = r"PROFESSIONAL_\d_"
+replacement = "PROFESSIONAL_"
 df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
 
 
