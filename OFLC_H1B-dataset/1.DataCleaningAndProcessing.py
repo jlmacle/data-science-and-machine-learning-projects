@@ -129,6 +129,14 @@ pattern = r"PROFESSIONAL_\d_"
 replacement = "PROFESSIONAL_"
 df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
 
+    # Replacing DEVELOPER_(digit) with DEVELOPER_
+    # Found in data :
+    # DEVELOPER_4_SYSTEMS_SOFTWARE
+    # DEVELOPER_4_APPLICATION_DEVELOPMENT
+pattern = r"DEVELOPER_\d_"
+replacement = "DEVELOPER_"
+df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
+
 
     # Changing DAT_3.X to DAT3.X
 pattern = r"DAT\_3\.X"
