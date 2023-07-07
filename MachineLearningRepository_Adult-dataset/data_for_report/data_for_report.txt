@@ -28,29 +28,67 @@ memory usage: 3.7+ MB
 
 
 Head of the cleaned data :
-    Age         Workclass  Fnlwgt  ... Hours-per-week  Native-country >50K__<=50K
-0  39.0         State-gov   77516  ...             40   United-States       <=50K
-1  39.0         State-gov   77516  ...             40   United-States       <=50K
-2  50.0  Self-emp-not-inc   83311  ...             13   United-States       <=50K
-3  38.0           Private  215646  ...             40   United-States       <=50K
-4  53.0           Private  234721  ...             40   United-States       <=50K
+    Age         Workclass  Fnlwgt  Education  Education-Num  \
+0  39.0         State-gov   77516  Bachelors             13   
+1  39.0         State-gov   77516  Bachelors             13   
+2  50.0  Self-emp-not-inc   83311  Bachelors             13   
+3  38.0           Private  215646    HS-grad              9   
+4  53.0           Private  234721       11th              7   
 
-[5 rows x 15 columns]
+       Marital-status         Occupation   Relationship   Race   Sex  \
+0       Never-married       Adm-clerical  Not-in-family  White  Male   
+1       Never-married       Adm-clerical  Not-in-family  White  Male   
+2  Married-civ-spouse    Exec-managerial        Husband  White  Male   
+3            Divorced  Handlers-cleaners  Not-in-family  White  Male   
+4  Married-civ-spouse  Handlers-cleaners        Husband  Black  Male   
+
+   Capital-gain  Capital-loss  Hours-per-week Native-country >50K__<=50K  
+0          2174             0              40  United-States       <=50K  
+1          2174             0              40  United-States       <=50K  
+2             0             0              13  United-States       <=50K  
+3             0             0              40  United-States       <=50K  
+4             0             0              40  United-States       <=50K  
 
 Description of the dataframe :
-                Age        Fnlwgt  ...  Capital-loss  Hours-per-week
-count  32538.000000  3.253800e+04  ...  32538.000000    32538.000000
-mean      38.585561  1.897774e+05  ...     87.365542       40.440316
-std       13.637774  1.055567e+05  ...    403.095929       12.346700
-min       17.000000  1.228500e+04  ...      0.000000        1.000000
-25%       28.000000  1.178188e+05  ...      0.000000       40.000000
-50%       37.000000  1.783545e+05  ...      0.000000       40.000000
-75%       48.000000  2.369928e+05  ...      0.000000       45.000000
-max       90.000000  1.484705e+06  ...   4356.000000       99.000000
+                Age        Fnlwgt  Education-Num  Capital-gain  Capital-loss  \
+count  32538.000000  3.253800e+04   32538.000000  32538.000000  32538.000000   
+mean      38.585561  1.897774e+05      10.081904   1078.477411     87.365542   
+std       13.637774  1.055567e+05       2.571644   7387.846388    403.095929   
+min       17.000000  1.228500e+04       1.000000      0.000000      0.000000   
+25%       28.000000  1.178188e+05       9.000000      0.000000      0.000000   
+50%       37.000000  1.783545e+05      10.000000      0.000000      0.000000   
+75%       48.000000  2.369928e+05      12.000000      0.000000      0.000000   
+max       90.000000  1.484705e+06      16.000000  99999.000000   4356.000000   
 
-[8 rows x 6 columns]
+       Hours-per-week  
+count    32538.000000  
+mean        40.440316  
+std         12.346700  
+min          1.000000  
+25%         40.000000  
+50%         40.000000  
+75%         45.000000  
+max         99.000000  
 
-View over the most represented native countries
+Null values per column :
+Age               0
+Workclass         0
+Fnlwgt            0
+Education         0
+Education-Num     0
+Marital-status    0
+Occupation        0
+Relationship      0
+Race              0
+Sex               0
+Capital-gain      0
+Capital-loss      0
+Hours-per-week    0
+Native-country    0
+>50K__<=50K       0
+dtype: int64
+
+A view over the most represented native countries
                  Unique Values  Count
 0                United-States  29154
 1                       Mexico    639
@@ -95,7 +133,7 @@ View over the most represented native countries
 40                    Scotland     12
 41          Holand-Netherlands      1
 
-View over the most represented workclasses under high school grad
+A view over the most represented workclasses under high school grad
       Unique Values  Count
 0           Private  10973
 1  Self-emp-not-inc   1172
@@ -107,7 +145,7 @@ View over the most represented workclasses under high school grad
 7       Without-pay     10
 8      Never-worked      5
 
-View over the most represented workclasses with a master's degree
+A view over the most represented workclasses with a master's degree
       Unique Values  Count
 0           Private    893
 1         Local-gov    342
@@ -117,7 +155,7 @@ View over the most represented workclasses with a master's degree
 5       Federal-gov     67
 6                 ?     48
 
-View over the most represented paycheck category for individuals with a master's degree
+A view over the most represented paycheck category for individuals with a master's degree
   Unique Values  Count
 0          >50K    959
 1         <=50K    763
