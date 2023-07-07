@@ -46,7 +46,7 @@ min,17.0,12285.0,1.0,0.0,0.0,1.0
 75%,48.0,236992.75,12.0,0.0,0.0,45.0
 max,90.0,1484705.0,16.0,99999.0,4356.0,99.0
 
-View over the most represented native countries
+A view over the most represented native countries
 ,Unique Values,Count
 0,United-States,29154
 1,Mexico,639
@@ -91,7 +91,7 @@ View over the most represented native countries
 40,Scotland,12
 41,Holand-Netherlands,1
 
-View over the most represented workclasses under high school grad
+A view over the most represented workclasses under high school grad
 ,Unique Values,Count
 0,Private,10973
 1,Self-emp-not-inc,1172
@@ -103,7 +103,7 @@ View over the most represented workclasses under high school grad
 7,Without-pay,10
 8,Never-worked,5
 
-View over the most represented workclasses with a master's degree
+A view over the most represented workclasses with a master's degree
 ,Unique Values,Count
 0,Private,893
 1,Local-gov,342
@@ -113,7 +113,7 @@ View over the most represented workclasses with a master's degree
 5,Federal-gov,67
 6,?,48
 
-View over the most represented paycheck category for individuals with a master's degree
+A view over the most represented paycheck category for individuals with a master's degree
 ,Unique Values,Count
 0,>50K,959
 1,<=50K,763
