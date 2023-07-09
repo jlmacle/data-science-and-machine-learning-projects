@@ -153,6 +153,13 @@ df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
 pattern = r"DIRECTOR_\d_"
 replacement = "DIRECTOR_"
 df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
+    
+    # Found in data :
+    # SOFTWARE_ENGINEER_2/JAVA_DEVELOPER
+    # Replacing with SOFTWARE_ENGINEER
+pattern = r"^SOFTWARE_ENGINEER_"
+replacement = "SOFTWARE_ENGINEER"
+df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
 
 
     # Changing DAT_3.X to DAT3.X
