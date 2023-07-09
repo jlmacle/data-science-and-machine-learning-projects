@@ -8,7 +8,9 @@ class _DataPath:
         self.data_path.set_path_to_data_folder(os.path.join(os.getcwd(),"MachineLearningRepository_Adult-dataset","data"))
         self.data_path.set_file_name_for_csv_with_original_data("adult.csv")       
         self.data_path.set_file_name_for_csv_with_cleaned_data("adult-Cleaned_data.csv")
-                    
+
+        self.data_path.set_path_to_folder_with_data_for_exploratory_analysis(os.path.join(os.getcwd(),"MachineLearningRepository_Adult-dataset","data_for_exploratory_analysis"))   
+
         self.data_path.set_path_to_folder_with_data_for_reporting(os.path.join(os.getcwd(),"MachineLearningRepository_Adult-dataset","data_for_report"))       
         self.data_path.set_file_name_for_csv_file_with_data_for_reporting("data_for_report.csv")
         self.data_path.set_file_name_for_txt_file_with_data_for_reporting("data_for_report.txt")
