@@ -38,6 +38,7 @@ dv.simple_stats(df)
 dv.print_to_txt_file("")
 
     # Unique count of values for "SOC_TITLE" column, listing the job titles
+    # 10 500+ lines in the results before data cleaning
 job_types_data = dv.count_unique_values(df, "JOB_TITLE", is_order_ascending=False)
     # To txt
 dv.print_to_txt_file("View over the most represented job types in the dataset")
