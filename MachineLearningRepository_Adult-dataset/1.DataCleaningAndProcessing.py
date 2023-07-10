@@ -39,6 +39,8 @@ if(results != {}):
     saving the copied and pasted file as adult-cleaned_data.csv **""")
     print()
 
+# TODO : re-run the exploratory analysis
+
 
 
     
