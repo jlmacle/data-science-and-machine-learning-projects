@@ -38,7 +38,7 @@ dv.simple_stats(df)
 # Specific to this report
 
 # A view on the most represented native countries
-native_country_data = dv.count_unique_values(df, "Native-country", False)
+native_country_data = dv.count_unique_values(df, "native-country", False)
    # To txt
 dv.print_to_txt_file("")
 dv.print_to_txt_file("A view over the most represented native countries")
@@ -50,8 +50,8 @@ dv.print_to_csv_file(dv.get_unique_count_values_csv_row())
 dv.print_to_csv_file(dv.table_data_to_csv(native_country_data, 1))
 
 # A view on the most represented occupations under high school grad
-df_less_than_high_school_grad = df[df["Education-Num"] <= 9]
-occupation_data_for_less_than_high_school_grad = dv.count_unique_values(df_less_than_high_school_grad, "Workclass", False)
+df_less_than_high_school_grad = df[df["education-num"] <= 9]
+occupation_data_for_less_than_high_school_grad = dv.count_unique_values(df_less_than_high_school_grad, "workclass", False)
    # To txt
 dv.print_to_txt_file("")
 dv.print_to_txt_file("A view over the most represented workclasses under high school grad")
@@ -63,8 +63,8 @@ dv.print_to_csv_file(dv.get_unique_count_values_csv_row())
 dv.print_to_csv_file(dv.table_data_to_csv(occupation_data_for_less_than_high_school_grad, 1))
 
 # A view over the most represented occupations with a master's degree
-df_master_s_degree = df[df["Education-Num"] == 14]
-occupation_data_for_master_s_degree = dv.count_unique_values(df_master_s_degree, "Workclass", False)
+df_master_s_degree = df[df["education-num"] == 14]
+occupation_data_for_master_s_degree = dv.count_unique_values(df_master_s_degree, "workclass", False)
    # To txt
 dv.print_to_txt_file("")
 dv.print_to_txt_file("A view over the most represented workclasses with a master's degree")
@@ -87,17 +87,17 @@ dv.print_to_csv_file(",Unique Values,Count")
 # 1 row to ignore
 dv.print_to_csv_file(dv.table_data_to_csv(income_data_for_master_s_degree, 1))
 
-#  With 'Education-Num' and 'Education' as first colums,
+#  With 'education-num' and 'Education' as first colums,
 #  using the values of column '>50K, <=50K' to create new columns
-pivot_table = pd.pivot_table(df, index=['Education-Num','Education'], columns='>50K__<=50K', aggfunc='size', fill_value=0)
+pivot_table = pd.pivot_table(df, index=['education-num','education'], columns='>50K__<=50K', aggfunc='size', fill_value=0)
 pivot_table.columns = ['<=50K', '>50K']
    # To txt
 dv.print_to_txt_file("")
-dv.print_to_txt_file("A view on 'Education-Num','Education', '>50K' and '<=50K'")
+dv.print_to_txt_file("A view on 'education-num','education', '>50K' and '<=50K'")
 dv.print_to_txt_file(pivot_table)
    # To csv
 dv.print_to_csv_file("")
-dv.print_to_csv_file("A view on 'Education-Num'_'Education'_and_'>50K' and '<=50K'")
+dv.print_to_csv_file("A view on 'education-num'_'education'_and_'>50K' and '<=50K'")
 # 2 rows to ignore
 dv.print_to_csv_file(dv.table_data_to_csv(pivot_table, 2))
 
@@ -105,7 +105,7 @@ dv.print_to_csv_file(dv.table_data_to_csv(pivot_table, 2))
 pd.set_option('display.max_rows', None)
 # With 'Workclass' and 'Occupation' as first columns,
 # using the values of column '>50K, <=50K' to create new columns
-pivot_table = pd.pivot_table(df, index=['Occupation'], columns='>50K__<=50K', aggfunc='size', fill_value=0)
+pivot_table = pd.pivot_table(df, index=['occupation'], columns='>50K__<=50K', aggfunc='size', fill_value=0)
 pivot_table.columns = ['<=50K', '>50K']
 pivot_table = pivot_table.sort_values(by=['>50K'], ascending=False)
    # To txt

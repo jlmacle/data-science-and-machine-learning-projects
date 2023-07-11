@@ -3,7 +3,7 @@ NOTE: I did the exploratory analysis while working on 1.DataCleaningAndProcessin
 Adding 0.ExploratoryAnalysis.py to have a more rigorous process.
 Currently re-writing code in both files.
 '''
-
+from ds_ml_utils.exploratory_analysis import ExploratoryAnalysis as ea_class
 from ds_ml_utils.data_cleaning_and_processing import DataCleaningAndProcessing as dcp_class
 from ds_ml_utils.data_visualization import DataVisualization as dv_class
 from _DataPath import _DataPath as _data_path_class
@@ -12,6 +12,7 @@ import os
 
 
 # Cleaning the data before processing
+ea = ea_class()
 dcp = dcp_class()
 dv = dv_class()
 _data_path = _data_path_class()
@@ -27,37 +28,45 @@ df = df.dropna()
 print("--> Dropping the potentially duplicate lines")
 df = df.drop_duplicates()
 
-
-# # Headers processing
-print()
+# Headers processing
 #EA2, EA3, EA4
-df = dcp.trim_and_concatenate_header_content(df, separator_to_replace_space="-")
+df = dcp.trim_concatenate_lower_case_header_content(df, separator_to_replace_space="-")
 #EA5
-df = df.rename(columns={">50K,-<=50K":">50K__<=50K"})
+df = df.rename(columns={">50k,-<=50k":">50K__<=50K"})
 # Printing every column names, in alphabetical order, with a line break after each column name
 column_names_list_for_visual_inspection = ea.list_vertically_with_separator_to_string(df.columns.to_list(), "*")
 print("".join(column_names_list_for_visual_inspection))
 
-# # Cells processing
+# Cells processing
+#EA6
 df = dcp.cells_processing_basic(df, separator_to_replace_space="_")
-df.to_csv(os.path.join(data_path.get_path_to_data_folder(),"adult-Automatically_cleaned-Potential_need_to_add_a_manual_cleaning.csv"), index=False)
 
-# # Pre-cleaning before using a pivot table
+#EA7: removing the row with the 99999 value in capital-gain
+print("--> Removing the row with the 99999 value in capital-gain")
+df = df[df["capital-gain"] != 99999]
+
+#EA8, EA9 : TODO : to find statistical data to confirm the string replacement
+
+
+# Pre-cleaning before using a pivot table
+#EA10
 # File used : adult_na_and_duplicates_removed.csv
-results = dcp.pre_pivot_table_cleaning_need_detection(df, "Education-Num", "Education",print_data_for_unique_values=False)
+results = dcp.pre_pivot_table_cleaning_need_detection(df, "education-num", "education",print_data_for_unique_values=False)
 # df is untouched by this step
 print("--> Education data in need of cleaning")
 print(results)
 # Using the previous results to locate the rows with the data anomalies
 if(results != {}):
     print()
-    lines = dcp.line_finding_given_labels_and_column(df,"Education", ["Bachelors2", "Masters2","Some-college2"])
+    lines = dcp.line_finding_given_labels_and_column(df,"education", ["Bachelors2", "Masters2","Some-college2"])
     print(lines)
     print()
     print("""** Todo: copy and pasting of adult-Automatically_cleaned-Potential_need_to_add_a_manual_cleaning.csv, 
     line cleaning if neccessary, 
     saving the copied and pasted file as adult-cleaned_data.csv **""")
     print()
+
+df.to_csv(os.path.join(data_path.get_path_to_data_folder(),"adult-Automatically_cleaned-Potential_need_to_add_a_manual_cleaning.csv"), index=False)
 
 # TODO : re-run the exploratory analysis
 
