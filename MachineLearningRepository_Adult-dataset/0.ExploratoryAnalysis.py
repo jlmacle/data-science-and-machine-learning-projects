@@ -18,7 +18,12 @@ Headers:
    5 A column name with a comma in it: *>50K, <=50K*, an issue when generating data toward a csv file
 6. Data trimming to do in the unique values
 7. A 99999 capital gain that seems unrealistic
-
+8. "Hong" alone appears 20 times in the "Country" column. "Hong Kong" does not appear.
+   Planning to search data about the main immigrant nationalities 
+   before replacing by Hong Kong (or South Korea. See 10.)
+9. "South" alone appears 80 times in the "Country" column. "South Korea" does not appear.
+10. Some education labels had been duplicated on purpose to test a cleaning method
+   They appear in the data to clean.
 
 '''
 from ds_ml_utils.exploratory_analysis import ExploratoryAnalysis as ea_class
@@ -58,5 +63,22 @@ column_names_list_for_visual_inspection = ea.list_vertically_with_separator_to_s
 print("".join(column_names_list_for_visual_inspection))
 
 # Printing the unique values for each column to a file
+# to check for potential mispellings, or other issues
 ea.print_unique_values_to_file(df, os.path.join(data_path.get_path_to_folder_with_data_for_exploratory_analysis(),"unique_values.txt"))
+  # Searching more info about "Kong" and "South" in the df
+print("Searching more info about 'Hong' and 'South' in the df")
+  # Searching how many times "Hong" is alone in the cell
+  # and how many times other words are in the cell
+  # (same for "South")
+mask_Hong_in_cell = df["Native country"].str.contains("Hong")
+mask_South_in_cell = df["Native country"].str.contains("South")
+# Series with the unique values and the count of each value 
+print('df["Native country"][mask_Hong_in_cell].value_counts()')
+df_Hong = df["Native country"][mask_Hong_in_cell].value_counts()
+print(df_Hong)
+print()
+print('df["Native country"][mask_South_in_cell].value_counts()')
+df_South = df["Native country"][mask_South_in_cell].value_counts()
+print(df_South)
+
 
