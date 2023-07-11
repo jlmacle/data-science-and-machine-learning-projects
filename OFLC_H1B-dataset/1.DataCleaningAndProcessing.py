@@ -40,7 +40,7 @@ line_numbers_before_cleaning = df.shape[0]
 
 # # Headers processing
 print()
-df = dcp.trim_and_concatenate_header_content(df, separator_to_replace_space="-")
+df = dcp.trim_concatenate_lower_case_header_content(df, separator_to_replace_space="-")
 
 # # Cells processing
 df = dcp.cells_processing_basic(df, separator_to_replace_space="_")
