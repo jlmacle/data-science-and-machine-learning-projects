@@ -2,6 +2,9 @@
 NOTE: I did the exploratory analysis while working on 1.DataCleaningAndProcessing.py.
 Adding 0.ExploratoryAnalysis.py to have a more rigorous process.
 Currently re-writing code in both files.
+
+Also, I sometimes choose to use Pandas and not the methods from ds_ml_utils
+in order to practice using Pandas.
 '''
 
 
