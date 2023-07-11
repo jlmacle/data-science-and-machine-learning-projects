@@ -1,6 +1,13 @@
+'''
+NOTE: I did the exploratory analysis while working on 1.DataCleaningAndProcessing.py.
+Adding 0.ExploratoryAnalysis.py to have a more rigorous process.
+Currently re-writing code in both files.
+'''
+
 from ds_ml_utils.data_cleaning_and_processing import DataCleaningAndProcessing as dcp_class
 from ds_ml_utils.data_visualization import DataVisualization as dv_class
 from _DataPath import _DataPath as _data_path_class
+import pandas as pd
 import os
 
 
@@ -10,13 +17,26 @@ dv = dv_class()
 _data_path = _data_path_class()
 data_path = _data_path.get_data_path_object()
 
-# # Removing rows with duplicates and unvavailable data 
-df  = dcp.drop_duplicates_and_remove_rows_with_empty_data_from_csv_file(data_path.get_path_to_data_folder(), data_path.get_file_name_for_csv_with_original_data(),low_memory_setting=False)
+df = pd.read_csv(os.path.join(data_path.get_path_to_data_folder(), data_path.get_file_name_for_csv_with_original_data()),low_memory=False)
+
+# EA1 : only 1 null value in the "Age" column
+# Dropping the line
+print("--> Dropping the line with the NaN value in the 'Age' column")
+df = df.dropna()
+
+print("--> Dropping the potentially duplicate lines")
+df = df.drop_duplicates()
+
 
 # # Headers processing
 print()
-df = dcp.header_processing(df, separator_to_replace_space="-")
+#EA2, EA3, EA4
+df = dcp.trim_and_concatenate_header_content(df, separator_to_replace_space="-")
+#EA5
 df = df.rename(columns={">50K,-<=50K":">50K__<=50K"})
+# Printing every column names, in alphabetical order, with a line break after each column name
+column_names_list_for_visual_inspection = ea.list_vertically_with_separator_to_string(df.columns.to_list(), "*")
+print("".join(column_names_list_for_visual_inspection))
 
 # # Cells processing
 df = dcp.cells_processing_basic(df, separator_to_replace_space="_")

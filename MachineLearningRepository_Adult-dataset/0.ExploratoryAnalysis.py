@@ -1,11 +1,20 @@
 '''
+NOTE: I did the exploratory analysis while working on 1.DataCleaningAndProcessing.py.
+Adding 0.ExploratoryAnalysis.py to have a more rigorous process.
+Currently re-writing code in both files.
+'''
+
+
+'''
 To fix:
-1. A trimming issue *    Workclass*
-2. Inconsistency in the use of the separator: *Hours-per-week* vs  *Marital status*
-   and spaces in the column names preventing the use of df.column_name
-3. Data trimming to do in the unique values
-4. A NaN value in the "Age" column
-5. A 99999 capital gain that seems unrealistic
+1. A null value in the "Age" column
+Headers:
+   2 A trimming issue *    Workclass*
+   3 Inconsistency in the use of word separators: *Hours-per-week* vs  *Marital status*
+   4 Spaces in the column names preventing the use of df.column_name
+   5 A column name with a comma in it: *>50K, <=50K*, an issue when generating data toward a csv file
+6. Data trimming to do in the unique values
+7. A 99999 capital gain that seems unrealistic
 
 
 '''
@@ -27,6 +36,14 @@ df = dcp.import_csv_to_df(data_path.get_path_to_original_csv_file(),low_memory_s
 # Dataframe shape
 print()
 print("Dataframe shape: ", df.shape)
+print()
+
+# Dataframe info
+print("Location of null values: ")
+mask = df.isnull().sum() != 0
+serie = df.isnull().sum()
+null_values_only = serie[mask]
+print(null_values_only)
 print()
 
 # Data types
