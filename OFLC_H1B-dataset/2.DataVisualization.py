@@ -39,7 +39,7 @@ dv.print_to_txt_file("")
 
     # Unique count of values for "SOC_TITLE" column, listing the job titles
     # 10 500+ lines in the results before data cleaning
-job_types_data = dv.count_unique_values(df, "JOB_TITLE", is_order_ascending=False)
+job_types_data = dv.count_unique_values(df, "job_title", is_order_ascending=False)
     # To txt
 dv.print_to_txt_file("View over the most represented job types in the dataset")
 dv.print_to_txt_file(job_types_data)
@@ -49,15 +49,15 @@ dv.print_to_csv_file(",Unique Values,Count")
 dv.print_to_csv_file(dv.table_data_to_csv(job_types_data, 1))
 
     # Evaluation of the average yearly salary per job title
-        # Converting the "PW_UNIT_OF_PAY" column values to uppercase
-dcp.cells_processing_to_uppercase_in_column(df, "PW_UNIT_OF_PAY")
-        # Boolean mask to select only data with the yearly value in the column "PW_UNIT_OF_PAY"
-mask_yearly = df["PW_UNIT_OF_PAY"] == "YEAR"
+        # Converting the "pw_unit_of_pay" column values to uppercase
+dcp.cells_processing_to_uppercase_in_column(df, "pw_unit_of_pay")
+        # Boolean mask to select only data with the yearly value in the column "pw_unit_of_pay"
+mask_yearly = df["pw_unit_of_pay"] == "YEAR"
         # Filtering the dataframe with the mask
 df_yearly = df[mask_yearly]
         # Grouping the data by job title and calculating the average yearly salary
-job_title_groups = df_yearly.groupby("JOB_TITLE")
-average_salary_per_job_title = job_title_groups["WAGE_RATE_OF_PAY_TO"].mean().astype(int)
+job_title_groups = df_yearly.groupby("job_title")
+average_salary_per_job_title = job_title_groups["wage_rate_of_pay_to"].mean().astype(int)
     # Printing the average yearly salary per job title
 print(average_salary_per_job_title)
 
