@@ -1,75 +1,74 @@
 
-Number of rows,32538
+Number of rows,32359
 Number of features,15
 
 Dataframe info :
 #,Column,Non-Null,Count,Dtype
 ---,------,--------------,-----
-0,Age,32538,non-null,float64
-1,Workclass,32538,non-null,object
-2,Fnlwgt,32538,non-null,int64
-3,Education,32538,non-null,object
-4,Education-Num,32538,non-null,int64
-5,Marital-status,32538,non-null,object
-6,Occupation,32538,non-null,object
-7,Relationship,32538,non-null,object
-8,Race,32538,non-null,object
-9,Sex,32538,non-null,object
-10,Capital-gain,32538,non-null,int64
-11,Capital-loss,32538,non-null,int64
-12,Hours-per-week,32538,non-null,int64
-13,Native-country,32538,non-null,object
-14,>50K__<=50K,32538,non-null,object
-dtypes:,float64(1),,int64(5),,object(9)
+0,age,32359,non-null,int64
+1,workclass,32359,non-null,object
+2,fnlwgt,32359,non-null,int64
+3,education,32359,non-null,object
+4,education-num,32359,non-null,int64
+5,marital-status,32359,non-null,object
+6,occupation,32359,non-null,object
+7,relationship,32359,non-null,object
+8,race,32359,non-null,object
+9,sex,32359,non-null,object
+10,capital-gain,32359,non-null,int64
+11,capital-loss,32359,non-null,int64
+12,hours-per-week,32359,non-null,int64
+13,native-country,32359,non-null,object
+14,>50K__<=50K,32359,non-null,object
+dtypes:,int64(6),,object(9)
 memory,usage:,3.7+,MB
 
 
 
-Age,Workclass,Fnlwgt,Education,Education-Num,Marital-status,Occupation,Relationship,Race,Sex,Capital-gain,Capital-loss,Hours-per-week,Native-country,>50K__<=50K
+age,workclass,fnlwgt,education,education-num,marital-status,occupation,relationship,race,sex,capital-gain,capital-loss,hours-per-week,native-country,>50K__<=50K
 
-39.0,State-gov,77516,Bachelors,13,Never-married,Adm-clerical,Not-in-family,White,Male,2174,0,40,United-States,<=50K
+39,State-gov,77516,Bachelors,13,Never-married,Adm-clerical,Not-in-family,White,Male,2174,0,40,United-States,<=50K
 
-39.0,State-gov,77516,Bachelors,13,Never-married,Adm-clerical,Not-in-family,White,Male,2174,0,40,United-States,<=50K
+39,State-gov,77516,Bachelors,13,Never-married,Adm-clerical,Not-in-family,White,Male,2174,0,40,United-States,<=50K
 
-50.0,Self-emp-not-inc,83311,Bachelors,13,Married-civ-spouse,Exec-managerial,Husband,White,Male,0,0,13,United-States,<=50K
+50,Self-emp-not-inc,83311,Bachelors,13,Married-civ-spouse,Exec-managerial,Husband,White,Male,0,0,13,United-States,<=50K
 
-38.0,Private,215646,HS-grad,9,Divorced,Handlers-cleaners,Not-in-family,White,Male,0,0,40,United-States,<=50K
+38,Private,215646,HS-grad,9,Divorced,Handlers-cleaners,Not-in-family,White,Male,0,0,40,United-States,<=50K
 
 
-,Age,Fnlwgt,Education-Num,Capital gain,Capital loss,Hours-per-week
-count,32538.0,32538.0,32538.0,32538.0,32538.0,32538.0
-mean,38.5855614973262,189777.39824205544,10.08190423504825,1078.4774110271067,87.36554182801648,40.44031593828754
-std,13.637774133868447,105556.68368130835,2.571644377172519,7387.846388183663,403.0959294909541,12.346699685847229
+count,32359.0,32359.0,32359.0,32359.0,32359.0,32359.0
+mean,38.55041873976328,189741.5827435953,10.067647331499737,593.0856021508699,87.78772520782472,40.39404802373374
+std,13.640961232474888,105585.86643605692,2.563302761191643,2561.881854232932,404.0206236632932,12.331560588166882
 min,17.0,12285.0,1.0,0.0,0.0,1.0
-25%,28.0,117818.75,9.0,0.0,0.0,40.0
-50%,37.0,178354.5,10.0,0.0,0.0,40.0
-75%,48.0,236992.75,12.0,0.0,0.0,45.0
-max,90.0,1484705.0,16.0,99999.0,4356.0,99.0
+25%,28.0,117789.0,9.0,0.0,0.0,40.0
+50%,37.0,178383.0,10.0,0.0,0.0,40.0
+75%,48.0,236981.0,12.0,0.0,0.0,45.0
+max,90.0,1484705.0,16.0,41310.0,4356.0,99.0
 
 A view over the most represented native countries
 ,Unique Values,Count
-0,United-States,29154
-1,Mexico,639
-2,?,582
-3,Philippines,198
+0,United-States,29012
+1,Mexico,638
+2,?,575
+3,Philippines,197
 4,Germany,137
-5,Canada,121
+5,Canada,120
 6,Puerto-Rico,114
 7,El-Salvador,106
-8,India,100
+8,India,97
 9,Cuba,95
 10,England,90
 11,Jamaica,81
-12,South,80
+12,South,Korea,79
 13,China,75
 14,Italy,73
-15,Dominican-Republic,70
+15,Dominican-Republic,69
 16,Vietnam,67
-17,Japan,62
-18,Guatemala,62
+17,Guatemala,62
+18,Japan,61
 19,Poland,60
 20,Columbia,59
-21,Taiwan,51
+21,Taiwan,50
 22,Haiti,44
 23,Iran,43
 24,Portugal,37
@@ -79,25 +78,24 @@ A view over the most represented native countries
 28,Greece,29
 29,Ecuador,28
 30,Ireland,24
-31,Hong,20
-33,Trinadad&Tobago,19
-32,Cambodia,19
-34,Laos,18
-35,Thailand,18
-36,Yugoslavia,16
-37,Outlying-US(Guam-USVI-etc),14
-38,Honduras,13
-39,Hungary,13
-40,Scotland,12
-41,Holand-Netherlands,1
+32,Trinadad&Tobago,19
+31,Cambodia,19
+33,Laos,18
+34,Thailand,18
+35,Yugoslavia,16
+36,Outlying-US(Guam-USVI-etc),14
+37,Honduras,13
+38,Hungary,13
+39,Scotland,12
+40,Holand-Netherlands,1
 
 A view over the most represented workclasses under high school grad
 ,Unique Values,Count
-0,Private,10973
-1,Self-emp-not-inc,1172
-2,?,960
-3,Local-gov,657
-4,Self-emp-inc,349
+0,Private,10953
+1,Self-emp-not-inc,1165
+2,?,959
+3,Local-gov,655
+4,Self-emp-inc,345
 5,State-gov,327
 6,Federal-gov,289
 7,Without-pay,10
@@ -105,53 +103,53 @@ A view over the most represented workclasses under high school grad
 
 A view over the most represented workclasses with a master's degree
 ,Unique Values,Count
-0,Private,893
+0,Private,879
 1,Local-gov,342
-2,State-gov,169
-3,Self-emp-not-inc,124
-4,Self-emp-inc,79
+2,State-gov,168
+3,Self-emp-not-inc,121
+4,Self-emp-inc,76
 5,Federal-gov,67
 6,?,48
 
 A view over the most represented paycheck category for individuals with a master's degree
 ,Unique Values,Count
-0,>50K,959
+0,>50K,938
 1,<=50K,763
 
 
-A view on 'Education-Num'_'Education'_and_'>50K' and '<=50K'
-1,Preschool,50,0
+A view on 'education-num'_'education'_and_'>50K' and '<=50K'
+1,Preschool,49,0
 2,1st-4th,160,6
 3,5th-6th,316,16
-4,7th-8th,605,40
-5,9th,487,27
-6,10th,871,62
-7,11th,1115,60
+4,7th-8th,604,40
+5,9th,486,26
+6,10th,871,60
+7,11th,1114,60
 8,12th,400,33
-9,HS-grad,8820,1674
-10,Some-college,5896,1386
-11,Assoc-voc,1021,361
-12,Assoc-acdm,802,265
-13,Bachelors,3133,2221
-14,Masters,763,959
-15,Prof-school,153,423
-16,Doctorate,107,306
+9,HS-grad,8816,1651
+10,Some-college,5895,1372
+11,Assoc-voc,1020,360
+12,Assoc-acdm,802,263
+13,Bachelors,3130,2179
+14,Masters,763,938
+15,Prof-school,153,377
+16,Doctorate,106,293
 
 
-A view on 'Occupation'_and_'>50K' and '<=50K'
-Exec-managerial,2097,1968
-Prof-specialty,2278,1858
-Sales,2667,983
-Craft-repair,3165,929
-Adm-clerical,3262,507
-Transport-moving,1277,320
-Tech-support,644,283
-Machine-op-inspct,1751,249
-Protective-serv,438,211
-?,1652,191
-Other-service,3154,137
-Farming-fishing,877,115
-Handlers-cleaners,1283,86
+A view on 'occupation'_and_'>50K' and '<=50K'
+Exec-managerial,2097,1924
+Prof-specialty,2276,1788
+Sales,2666,958
+Craft-repair,3161,921
+Adm-clerical,3260,501
+Transport-moving,1277,319
+Tech-support,643,282
+Machine-op-inspct,1749,248
+Protective-serv,438,209
+?,1651,187
+Other-service,3154,135
+Farming-fishing,876,115
+Handlers-cleaners,1283,85
 Armed-Forces,8,1
 Priv-house-serv,146,1
 
