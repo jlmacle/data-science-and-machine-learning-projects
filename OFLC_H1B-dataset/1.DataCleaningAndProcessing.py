@@ -42,41 +42,43 @@ line_numbers_before_cleaning = df.shape[0]
 print()
 df = dcp.trim_concatenate_lower_case_header_content(df, separator_to_replace_space="-")
 
+
+
 # # Cells processing
 df = dcp.cells_processing_basic(df, separator_to_replace_space="_")
-df = dcp.cells_processing_to_uppercase_in_column(df, "JOB_TITLE")
+df = dcp.cells_processing_to_uppercase_in_column(df, "job_title")
     # Converting amount in $ to float
-df = dcp.from_dollar_strings_to_floats(df, "WAGE_RATE_OF_PAY_TO")
+df = dcp.from_dollar_strings_to_floats(df, "wage_rate_of_pay_to")
 
 # Pattern removal
-print("--> Removing patterns of data in the JOB_TITLE column")
+print("--> Removing patterns of data in the job_title column")
     # Removing patterns similar to _(017040.000997.000997)
 pattern = r"_\(\d+\.\d+\.\d+\)"
-df = dcp.remove_pattern_in_column(df, "JOB_TITLE", pattern)
+df = dcp.remove_pattern_in_column(df, "job_title", pattern)
 
    # Removing patterns similar to _(017040.000997) 
 pattern = r"_\(\d+\.\d+\)"
-df = dcp.remove_pattern_in_column(df, "JOB_TITLE", pattern)
+df = dcp.remove_pattern_in_column(df, "job_title", pattern)
 
    # Removing patterns similar to _(017040000997)
 pattern = r"_\(\d+\)"
-df = dcp.remove_pattern_in_column(df, "JOB_TITLE", pattern)
+df = dcp.remove_pattern_in_column(df, "job_title", pattern)
 
     # Removing patterns similar to (_20637.580)
 pattern = r"\(\_\d+\.\d+\)"
-df = dcp.remove_pattern_in_column(df, "JOB_TITLE", pattern)
+df = dcp.remove_pattern_in_column(df, "job_title", pattern)
 
     # Removing patterns similar to _20637.235.7
 pattern = r"\_\d+\.\d+\.\d+"
-df = dcp.remove_pattern_in_column(df, "JOB_TITLE", pattern)
+df = dcp.remove_pattern_in_column(df, "job_title", pattern)
 
     # Removing patterns similar to _017040.001775
 pattern = r"\_\d+\.\d+"
-df = dcp.remove_pattern_in_column(df, "JOB_TITLE", pattern)
+df = dcp.remove_pattern_in_column(df, "job_title", pattern)
 
     # Removing patterns similar to _[00040133]
 pattern = r"\_\[\d+\]"
-df = dcp.remove_pattern_in_column(df, "JOB_TITLE", pattern)
+df = dcp.remove_pattern_in_column(df, "job_title", pattern)
  
     # Changing TIER_2 to TIER2 in preparation for the next pattern removal
     # ChatGPT 23/07
@@ -91,11 +93,11 @@ df = dcp.remove_pattern_in_column(df, "JOB_TITLE", pattern)
     # with "TIER" followed by the same digit.
 pattern = r'TIER_(\d)'
 replacement = r'TIER\1'
-df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
+df = dcp.replace_pattern_in_column(df, "job_title", pattern, replacement)
 
     # Removing patterns similar to _4
 pattern = r"\_\d+$"
-dcp.remove_pattern_in_column(df, "JOB_TITLE", pattern)
+dcp.remove_pattern_in_column(df, "job_title", pattern)
 
     # Replacing ENGINEER_(digit) with ENGINEER_
     # Found in data :
@@ -103,7 +105,7 @@ dcp.remove_pattern_in_column(df, "JOB_TITLE", pattern)
     # ENGINEER_4_NETWORK_ENGINEERING
 pattern = r"ENGINEER_\d_"
 replacement = "ENGINEER_"
-df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
+df = dcp.replace_pattern_in_column(df, "job_title", pattern, replacement)
 
     # Replacing MANAGER_(digit) with MANAGER_
     # Found in data :
@@ -111,7 +113,7 @@ df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
     # MANAGER_1_ENTERPRISE_DATA_ENGINEERING
 pattern = r"MANAGER_\d_"
 replacement = "MANAGER_"
-df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
+df = dcp.replace_pattern_in_column(df, "job_title", pattern, replacement)
 
     # Replacing ARCHITECT_(digit) with ARCHITECT_
     # Found in data :
@@ -119,7 +121,7 @@ df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
     # ARCHITECT_4_SOFTWARE_DEVELOPMENT_&_ENGINEERING 
 pattern = r"ARCHITECT_\d_"
 replacement = "ARCHITECT_"
-df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
+df = dcp.replace_pattern_in_column(df, "job_title", pattern, replacement)
 
     # Replacing PROFESSIONAL_(digit) with PROFESSIONAL_
     # Found in data :
@@ -127,7 +129,7 @@ df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
     # PROFESSIONAL_4_INFORMATION_TECHNOLOGY
 pattern = r"PROFESSIONAL_\d_"
 replacement = "PROFESSIONAL_"
-df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
+df = dcp.replace_pattern_in_column(df, "job_title", pattern, replacement)
 
     # Replacing DEVELOPER_(digit) with DEVELOPER_
     # Found in data :
@@ -135,7 +137,7 @@ df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
     # DEVELOPER_4_APPLICATION_DEVELOPMENT
 pattern = r"DEVELOPER_\d_"
 replacement = "DEVELOPER_"
-df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
+df = dcp.replace_pattern_in_column(df, "job_title", pattern, replacement)
 
     # Replacing ANALYST_(digit) with ANALYST_
     # Found in data :
@@ -143,7 +145,7 @@ df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
     # ANALYST_5_PROGRAMMING
 pattern = r"ANALYST_\d_"
 replacement = "ANALYST_"
-df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
+df = dcp.replace_pattern_in_column(df, "job_title", pattern, replacement)
 
 
     # Replacing DIRECTOR_(digit) with DIRECTOR_
@@ -152,20 +154,20 @@ df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
     # DIRECTOR_1_SOFTWARE_DEVELOPMENT_&_ENGINEERING
 pattern = r"DIRECTOR_\d_"
 replacement = "DIRECTOR_"
-df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
+df = dcp.replace_pattern_in_column(df, "job_title", pattern, replacement)
     
     # Found in data :
     # SOFTWARE_ENGINEER_2/JAVA_DEVELOPER
     # Replacing with SOFTWARE_ENGINEER
 pattern = r"^SOFTWARE_ENGINEER_"
 replacement = "SOFTWARE_ENGINEER"
-df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
+df = dcp.replace_pattern_in_column(df, "job_title", pattern, replacement)
 
 
     # Changing DAT_3.X to DAT3.X
 pattern = r"DAT\_3\.X"
 replacement = "DAT3.X"
-df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
+df = dcp.replace_pattern_in_column(df, "job_title", pattern, replacement)
 
 
 # reviewed until this point
@@ -177,7 +179,7 @@ df = dcp.replace_pattern_in_column(df, "JOB_TITLE", pattern, replacement)
     # SOFTWARE_DEVELOPMENT_&_ENGINEERING
     # SENIOR_ANALYST_PAYROLL_APPLICATIONS_(LEVEL_3)
 pattern = r"\_\d+"
-dcp.locate_pattern_in_column(df, "JOB_TITLE", pattern)
+dcp.locate_pattern_in_column(df, "job_title", pattern)
 
 
 
@@ -194,7 +196,7 @@ dcp.locate_pattern_in_column(df, "JOB_TITLE", pattern)
 # To add at the end: a trimming of '_'
 
 # # Storing words related to the job titles in a trie
-trie = dcp.get_trie_with_words_from_column(df, "JOB_TITLE",'_')
+trie = dcp.get_trie_with_words_from_column(df, "job_title",'_')
 data = trie.print_alphabetical_to_string()
 file_name = "words_in_trie.txt"
 file_name_with_data_about_trie = "data about trie.txt"

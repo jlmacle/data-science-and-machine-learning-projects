@@ -110,11 +110,11 @@ pivot_table.columns = ['<=50K', '>50K']
 pivot_table = pivot_table.sort_values(by=['>50K'], ascending=False)
    # To txt
 dv.print_to_txt_file("")
-dv.print_to_txt_file("A view on 'Occupation', '>50K' and '<=50K'")
+dv.print_to_txt_file("A view on 'occupation', '>50K' and '<=50K'")
 dv.print_to_txt_file(pivot_table)
    # To csv
 dv.print_to_csv_file("")
-dv.print_to_csv_file("A view on 'Occupation'_and_'>50K' and '<=50K'")
+dv.print_to_csv_file("A view on 'occupation'_and_'>50K' and '<=50K'")
 # 2 rows to ignore
 dv.print_to_csv_file(dv.table_data_to_csv(pivot_table, 2))
 

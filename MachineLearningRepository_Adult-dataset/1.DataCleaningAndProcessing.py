@@ -32,6 +32,7 @@ df = df.drop_duplicates()
 #EA2, EA3, EA4
 df = dcp.trim_concatenate_lower_case_header_content(df, separator_to_replace_space="-")
 #EA5
+print("--> Renaming '>50k,-<=50k' into '>50K__<=50K'")
 df = df.rename(columns={">50k,-<=50k":">50K__<=50K"})
 # Printing every column names, in alphabetical order, with a line break after each column name
 column_names_list_for_visual_inspection = ea.list_vertically_with_separator_to_string(df.columns.to_list(), "*")
@@ -45,12 +46,17 @@ df = dcp.cells_processing_basic(df, separator_to_replace_space="_")
 print("--> Removing the row with the 99999 value in capital-gain")
 df = df[df["capital-gain"] != 99999]
 
-#EA8, EA9 : TODO : to find statistical data to confirm the string replacement
+#EA8
+# Replacing "South" with "South Korea" in the "native-country" column 
+print("--> Replacing 'South' with 'South Korea' in the 'native-country' column")  
+df["native-country"] = df["native-country"].str.replace( "South", "South Korea")
 
+#EA9 : Removing the rows containing "Hong" in the "native-country" column
+print("--> Removing the rows containing 'Hong' in the 'native-country' column")
+df = df[df["native-country"] != "Hong"]
 
 # Pre-cleaning before using a pivot table
 #EA10
-# File used : adult_na_and_duplicates_removed.csv
 results = dcp.pre_pivot_table_cleaning_need_detection(df, "education-num", "education",print_data_for_unique_values=False)
 # df is untouched by this step
 print("--> Education data in need of cleaning")
