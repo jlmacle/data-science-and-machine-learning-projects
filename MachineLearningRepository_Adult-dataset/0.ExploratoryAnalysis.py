@@ -3,8 +3,7 @@ NOTE: I did the exploratory analysis while working on 1.DataCleaningAndProcessin
 Adding 0.ExploratoryAnalysis.py to have a more rigorous process.
 Currently re-writing code in both files.
 
-Also, I sometimes choose to use Pandas and not the methods from ds_ml_utils
-in order to practice using Pandas.
+Also, I sometimes choose to use Pandas and not the methods from ds_ml_utils to practice using Pandas.
 '''
 
 
@@ -18,10 +17,14 @@ Headers:
    5 A column name with a comma in it: *>50K, <=50K*, an issue when generating data toward a csv file
 6. Data trimming to do in the unique values
 7. A 99999 capital gain that seems unrealistic
-8. "Hong" alone appears 20 times in the "Country" column. "Hong Kong" does not appear.
-   Planning to search data about the main immigrant nationalities 
-   before replacing by Hong Kong (or South Korea. See 10.)
-9. "South" alone appears 80 times in the "Country" column. "South Korea" does not appear.
+8. "South" alone appears 80 times in the "Country" column. "South Korea" does not appear.
+   "South" ranks 12th in the value counts of the "Country" column,
+   and 11th as a country source of immigration to the US (USA have 1st place in value counts).
+   In this 2023 data, South Korea ranks 10 as a source of immigration to the US:
+   https://worldpopulationreview.com/country-rankings/us-immigration-by-country
+   Replacing "South" by "South Korea" seems a proper choice.
+9. "Hong" alone appears 20 times in the "Country" column. "Hong Kong" does not appear.
+   The 20 rows are not necessary to the dataset. Planning to remove them.
 10. Some education labels had been duplicated on purpose to test a cleaning method
    They appear in the data to clean.
 
@@ -80,5 +83,12 @@ print()
 print('df["Native country"][mask_South_in_cell].value_counts()')
 df_South = df["Native country"][mask_South_in_cell].value_counts()
 print(df_South)
+print()
+
+# Adding an index to the Series of value counts
+series_countries_count = df["Native country"].value_counts().reset_index()
+print("series_countries_count")
+print(series_countries_count)
+
 
 
