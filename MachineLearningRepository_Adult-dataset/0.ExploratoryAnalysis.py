@@ -49,11 +49,11 @@ print()
 print("Dataframe shape: ", df.shape)
 print()
 
-# Dataframe info
+# Location of null values
 print("Location of null values: ")
 mask = df.isnull().sum() != 0
-serie = df.isnull().sum()
-null_values_only = serie[mask]
+series = df.isnull().sum()
+null_values_only = series[mask] # Only 'Age' has a null value
 print(null_values_only)
 print()
 
@@ -61,7 +61,7 @@ print()
 print("Data types: ", df.dtypes.unique())   #df.dtypes is of type Series
 print()  #https://pandas.pydata.org/docs/reference/api/pandas.Series.html
                                   
-# Printing every column names, in alphabetical order, with a line break after each column name
+# Printing every column names, in alphabetical order, with delimiters, with a line break after each column name
 column_names_list_for_visual_inspection = ea.list_vertically_with_separator_to_string(df.columns.to_list(), "*")
 print("".join(column_names_list_for_visual_inspection))
 
