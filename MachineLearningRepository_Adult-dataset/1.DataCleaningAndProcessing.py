@@ -67,12 +67,11 @@ if(results != {}):
     lines = dcp.line_finding_given_labels_and_column(df,"education", ["Bachelors2", "Masters2","Some-college2"])
     print(lines)
     print()
-    print("""** Todo: copy and pasting of adult-Automatically_cleaned-Potential_need_to_add_a_manual_cleaning.csv, 
-    line cleaning if neccessary, 
-    saving the copied and pasted file as adult-cleaned_data.csv **""")
+    print("""** Todo: line cleaning in Data-automatically_cleaned-Potential_need_to_add_a_manual_cleaning.csv if neccessary, 
+    then file saving as Cleaned_data.csv **""")
     print()
 
-df.to_csv(os.path.join(data_path.get_path_to_data_folder(),"adult-Automatically_cleaned-Potential_need_to_add_a_manual_cleaning.csv"), index=False)
+df.to_csv(os.path.join(data_path.get_path_to_data_folder(),"Data-automatically_cleaned-Potential_need_to_add_a_manual_cleaning.csv"), index=False)
 
 # TODO : re-run the exploratory analysis
 
